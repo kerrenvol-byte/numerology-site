@@ -85,7 +85,7 @@ const CONFIG = {
   phoneDisplay: "050-577-2720",      // כך יופיע בדף
   phoneLink: "+972505772720",        // לחיוג
   formsEndpoint: "https://api.web3forms.com/submit",
-  formsAccessKey: "",                // מפתח הגישה מ-web3forms.com (נוצר עם המייל שאליו מגיעות ההזמנות). חובה למלא לפני עלייה לאוויר
+  formsAccessKey: "df421166-e906-4f4c-b4a4-7a13da80bc74",              // מפתח הגישה מ-web3forms.com (נוצר עם המייל שאליו מגיעות ההזמנות). חובה למלא לפני עלייה לאוויר
   metaPixelId: "",                   // מספר הפיקסל מ-Meta. כל עוד ריק, האתר לא טוען שום מעקב
   paymentEndpoint: "/api/create-payment",
   paymentMode: "redirect",           // "redirect" = מעבר לדף GROW | "iframe" = הטמעה בתוך החלון
