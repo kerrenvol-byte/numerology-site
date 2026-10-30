@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>השנה האישית שלך ב-2027 | קרן וולף</title>
+<meta name="description" content="מחשבון חינם: מה השנה האישית שלך ב-2027, ומה המספר של כל חודש. בלי הרשמה.">
+<meta name="theme-color" content="#e9defc">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2a1f4f;--ink-soft:#5d5183;--lilac:#cdbcf7;--lilac-l:#eae1fd;--lilac-d:#9b80ec;--mint:#cfe5d5;--mint-l:#ecf6ef;--bg-top:#e9defc;--bg-mid:#f0f4fd;--stroke:2.5px solid var(--ink);--pop:4px 4px 0 var(--ink);--display:"Suez One","Rubik",serif;--body:"Rubik",system-ui,Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;font:400 16.5px/1.65 var(--body);color:var(--ink);background:linear-gradient(180deg,var(--bg-top) 0%,var(--bg-mid) 40%,var(--mint-l) 75%,#fff 100%);min-height:100vh}
+h1,h2{font-family:var(--display);font-weight:400;line-height:1.15;margin:0}
+p{margin:0}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:10px}
+.page{width:min(560px,100% - 32px);margin:0 auto;padding:36px 0 56px}
+header{text-align:center;margin-bottom:24px}
+h1{font-size:38px}
+.lead{color:var(--ink-soft);margin-top:10px}
+.card{background:#fff;border:var(--stroke);border-radius:28px;box-shadow:var(--pop);padding:24px 20px;margin-top:22px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.f{flex:1 1 110px;display:flex;flex-direction:column;gap:5px;font-weight:500;font-size:15px}
+select{width:100%;min-height:54px;padding:0 12px;border:var(--stroke);border-radius:16px;background:var(--lilac-l);font:500 17px var(--body);color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;border-radius:999px;border:var(--stroke);background:var(--ink);color:#fff;font:600 17px/1 var(--body);cursor:pointer;text-decoration:none;box-shadow:4px 4px 0 var(--lilac-d)}
+.btn.wide{width:100%;margin-top:18px}
+.bubble{width:112px;height:112px;margin:0 auto 12px;border-radius:50%;background:var(--mint);border:var(--stroke);box-shadow:var(--pop);display:grid;place-items:center;font-family:var(--display);font-size:60px;line-height:1}
+#res{text-align:center}
+#res h2{font-size:27px}
+#res .txt{margin-top:8px}
+.months{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0;padding:0;list-style:none}
+.months li{background:var(--lilac-l);border:2px solid var(--ink);border-radius:16px;padding:8px 6px;text-align:center;font-size:14px;line-height:1.3}
+.months b{display:block;font-family:var(--display);font-weight:400;font-size:24px}
+.months small{display:block;font-size:12.5px;color:var(--ink-soft)}
+.err{flex-basis:100%;margin:0;color:#c0392b;font-weight:600;font-size:14.5px}
+.err:empty{display:none}
+.h{font-family:var(--display);font-size:23px;text-align:center;margin-bottom:14px}
+.note{font-size:14px;color:var(--ink-soft);margin-top:14px;text-align:center}
+footer{margin-top:32px;text-align:center;font-size:13px;color:var(--ink-soft)}
+footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 8px;margin-bottom:10px}
+footer a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:var(--ink)}
+[hidden]{display:none!important}
+@media (max-width:460px){h1{font-size:32px}}
+</style>
+</head>
+<body>
+<main class="page">
+  <header>
+    <h1>מה השנה האישית שלך ב-2027?</h1>
+    <p class="lead">בוחרים יום וחודש לידה ורואים את המספר של השנה ושל כל חודש בה. בלי הרשמה.</p>
+  </header>
+
+  <form class="card row" id="calc">
+    <div class="f"><label for="day">יום לידה</label><select id="day" required></select></div>
+    <div class="f"><label for="month">חודש לידה</label><select id="month" required></select></div>
+    <button class="btn" type="submit">לחישוב</button>
+    <p class="err" id="err" role="alert"></p>
+  </form>
+
+  <div id="out" hidden aria-live="polite">
+    <section class="card" id="res">
+      <div class="bubble" id="num"></div>
+      <h2 id="title"></h2>
+      <p class="txt" id="text"></p>
+    </section>
+    <section class="card">
+      <p class="h">החודשים שלך ב-2027</p>
+      <ul class="months" id="months"></ul>
+      <p class="note">המספרים הם טעימה כללית. הקריאה האישית מתייחסת גם לשם, להקשר ולשאלה שלך.</p>
+      <a class="btn wide" href="index.html#services">למיקוד שנתי אישי ל-2027</a>
+    </section>
+  </div>
+
+  <footer>
+    <nav id="legal" aria-label="מסמכים נוספים"></nav>
+    <p id="dis"></p>
+    <p style="margin-top:8px">התאריך נשאר בדפדפן שלך ולא נשמר או נשלח לשום מקום.</p>
+  </footer>
+</main>
+
+<script src="settings.js"></script>
+<script>
+/* טיוטה לעריכה של קרן: הטקסטים של השנים ומילות החודשים */
+const YEARS = {
+  1:["שנה של התחלה","זמן טוב לפתוח משהו חדש ולקחת החלטה שדחית. מה שמתחיל עכשיו נותן כיוון לשנים הבאות."],
+  2:["שנה של שיתוף","פחות דחיפה קדימה, יותר קשרים, סבלנות והקשבה. דברים מתקדמים דרך אנשים ודורשים זמן."],
+  3:["שנה של ביטוי","זמן להראות את מה שיש לך: לדבר, ליצור, לצאת החוצה. קל להתפזר, אז כדאי לבחור מעט דברים."],
+  4:["שנה של בנייה","עבודה, סדר, תקציב ושגרה. פחות נוצץ, אבל זו השנה שעליה נשען מה שתבני אחר כך."],
+  5:["שנה של שינוי","תנועה, הזדמנויות לא מתוכננות ורצון לצאת מהמוכר. כדאי להשאיר מקום לגמישות ולא לנעול הכול מראש."],
+  6:["שנה של אחריות","הבית, המשפחה, הקשרים הקרובים והמחויבויות עולים למרכז. זמן טוב לסדר מה שדורש טיפול."],
+  7:["שנה של התבוננות","פחות רעש, יותר למידה וזמן עם עצמך. שנה להבין לפני שפועלים, ולא למהר להחלטות גדולות."],
+  8:["שנה של תוצאות","עבודה, כסף, סמכות והחלטות מעשיות. זמן לבקש את מה שמגיע לך ולסגור דברים שנבנו."],
+  9:["שנה של סיום","זמן לסגור מעגלים ולפנות מקום. מה שכבר לא מתאים נושר, כדי שתהיה התחלה חדשה בשנה הבאה."]
+};
+const WORDS = {1:"התחלה",2:"שיתוף",3:"ביטוי",4:"בנייה",5:"שינוי",6:"אחריות",7:"התבוננות",8:"תוצאות",9:"סיום"};
+const MONTHS = ["ינואר","פברואר","מרץ","אפריל","מאי","יוני","יולי","אוגוסט","ספטמבר","אוקטובר","נובמבר","דצמבר"];
+const YEAR = 2027;
+
+/* פיקסל של Meta: כמו בעמוד הראשי, נטען רק אם מוגדר ב-settings.js. התאריך לא נשלח אליו */
+if (CONFIG.metaPixelId){
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
+  fbq("init",CONFIG.metaPixelId);
+  fbq("track","PageView");
+}
+
+const $ = s => document.querySelector(s);
+const one = n => { while(n>9) n=String(n).split("").reduce((a,d)=>a+ +d,0); return n; };
+/* השיטה של קרן: השנה מתחלפת ביום ההולדת, ולילידי יולי-דצמבר מתווסף 1 */
+const personalYearAt = (d,m,year,calMonth,calDay) => {
+  const lastBirthdayYear = calMonth>m||(calMonth===m&&calDay>=d) ? year : year-1;
+  return one(one(d)+one(m)+one(lastBirthdayYear)+(m>=7?1:0));
+};
+const personalMonth = (py,m) => one(py+m);
+const DAYS_IN_MONTH = [31,29,31,30,31,30,31,31,30,31,30,31];
+
+$("#day").innerHTML = '<option value="">בחרי</option>'+Array.from({length:31},(_,i)=>`<option>${i+1}</option>`).join("");
+$("#month").innerHTML = '<option value="">בחרי</option>'+MONTHS.map((t,i)=>`<option value="${i+1}">${t}</option>`).join("");
+$("#legal").innerHTML = Object.values(LEGAL).map(l=>`<a href="${l.href}">${l.label}</a>`).join("");
+$("#dis").textContent = TEXT.disclaimer;
+
+$("#calc").addEventListener("submit",e=>{
+  e.preventDefault();
+  const d = +$("#day").value, m = +$("#month").value;
+  $("#err").textContent = d>DAYS_IN_MONTH[m-1] ? "התאריך הזה לא קיים. כדאי לבדוק את היום והחודש." : "";
+  if($("#err").textContent){ $("#out").hidden=true; return; }
+  const py = personalYearAt(d,m,YEAR,12,31), [t,txt] = YEARS[py];
+  $("#num").textContent = py;
+  $("#title").textContent = `שנה אישית ${py}: ${t}`;
+  $("#text").textContent = `${txt} השנה הזו מתחילה ביום ההולדת שלך ב-${YEAR}.`;
+  $("#months").innerHTML = MONTHS.map((n,i)=>{
+    const pm = personalMonth(personalYearAt(d,m,YEAR,i+1,1),i+1);
+    const shift = i+1===m&&d>1 ? `<small>מתחלף ב-${d} בחודש</small>` : "";
+    return `<li>${n}<b>${pm}</b>${WORDS[pm]}${shift}</li>`;
+  }).join("");
+  $("#out").hidden = false;
+  $("#res").scrollIntoView({behavior:"smooth",block:"start"});
+  if(window.fbq) fbq("track","ViewContent",{content_name:"מחשבון 2027"});
+});
+</script>
+</body>
+</html>
