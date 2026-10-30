@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ביטול עסקה | קרן וולף</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2a1f4f;--ink-soft:#5d5183;--lilac:#cdbcf7;--lilac-l:#eae1fd;--mint:#cfe5d5;--mint-l:#ecf6ef;--sage:#6f8f79;--bg-top:#e9defc;--bg-mid:#f0f4fd}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Rubik",system-ui,Arial,sans-serif;font-size:17px;line-height:1.8;color:var(--ink);background:linear-gradient(180deg,var(--bg-top) 0,var(--bg-mid) 320px,#fff 900px) #fff;min-height:100vh}
+a{color:var(--ink)}
+.wrap{width:min(760px,100% - 32px);margin:0 auto;padding:28px 0 72px}
+.back{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border:2.5px solid var(--ink);border-radius:999px;background:#fff;box-shadow:3px 3px 0 var(--ink);text-decoration:none;font-weight:500;font-size:15px}
+.back:hover{background:var(--mint-l)}
+.brand{display:flex;align-items:center;gap:14px;margin:26px 0 8px}
+.brand img{flex:none;width:56px;height:56px;padding:11px;background:var(--sage);border:2.5px solid var(--ink);border-radius:50%;box-shadow:3px 3px 0 var(--ink)}
+h1{font-family:"Suez One","Rubik",serif;font-weight:400;font-size:clamp(30px,6vw,44px);line-height:1.15;margin:0}
+.meta{color:var(--ink-soft);font-size:15px;margin:6px 0 22px}
+.draft{background:#fff3c4;border:2.5px solid var(--ink);border-radius:18px;padding:12px 18px;margin:0 0 24px;font-size:15px}
+.card{background:#fff;border:2.5px solid var(--ink);border-radius:26px;box-shadow:5px 5px 0 var(--ink);padding:clamp(20px,4vw,38px)}
+h2{font-family:"Suez One","Rubik",serif;font-weight:400;font-size:24px;line-height:1.25;margin:32px 0 6px}
+main h2:first-child{margin-top:0}
+p{margin:0 0 12px}
+ul{margin:0 0 14px;padding-inline-start:22px}
+li{margin-bottom:6px}
+.ph{background:#fff3c4;border-radius:6px;padding:0 4px}
+.note{background:var(--mint-l);border:2px solid var(--ink);border-radius:16px;padding:12px 16px;margin:8px 0 14px;font-size:15.5px}
+.other{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:26px;font-size:15px}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;border:2.5px solid var(--ink);background:var(--ink);color:#fff;font:600 16px var(--sans,Rubik);text-decoration:none;box-shadow:4px 4px 0 var(--lilac,#cdbcf7)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class='back' href='/'>← חזרה לאתר</a>
+  <div class="brand"><img src="assets/logo-icon.svg" alt=""><h1>ביטול עסקה</h1></div>
+  <p class="meta">עודכן לאחרונה: <span data-b="updated"></span></p>
+  <div class="draft" id="draft" hidden><b>טיוטה לבדיקה.</b> המסמך הוכן כטיוטה ואינו ייעוץ משפטי. יש להעביר אותו לעורך דין לפני פרסום, ולמלא את הפרטים המסומנים בצהוב. להסרת הבאנר: BUSINESS.draft = false בקובץ settings.js.</div>
+</header>
+  <main class="card">
+
+<p>אפשר לבטל עסקה שבוצעה באתר בכל אחת מהדרכים כאן. התנאים והמועדים מפורטים ב<a href='/refunds'>מדיניות הביטולים וההחזרים</a>.</p>
+
+<h2>מה לציין בהודעה</h2>
+<ul>
+<li>שם מלא ומספר זהות</li>
+<li>השירות שהוזמן ותאריך ההזמנה</li>
+<li>כתובת המייל שבה בוצעה ההזמנה</li>
+</ul>
+
+<h2>ביטול במייל</h2>
+<p><a class="btn" id="mailCancel" href="#">שליחת הודעת ביטול במייל</a></p>
+<p>הכתובת: <span data-c="email"></span></p>
+
+<h2>דרכים נוספות</h2>
+<ul>
+<li>טלפון: <span data-c="phoneDisplay"></span></li>
+<li>וואטסאפ: <a id="waCancel" href="#" target="_blank" rel="noopener">שליחת הודעה בוואטסאפ</a></li>
+<li>דואר רשום: <span data-b="address"></span></li>
+</ul>
+
+<p>אחרי קבלת ההודעה אשלח אישור. ההחזר, אם מגיע, יבוצע בתוך 14 ימים מיום קבלתה.</p>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  var t="ביטול עסקה", b="שלום, אני מבקשת לבטל עסקה.\nשם מלא:\nמספר זהות:\nהשירות שהוזמן:\nתאריך ההזמנה:";
+  document.getElementById("mailCancel").href="mailto:"+CONFIG.email+"?subject="+encodeURIComponent(t)+"&body="+encodeURIComponent(b);
+  document.getElementById("waCancel").href="https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(t+"\nשם מלא:\nמספר זהות:\nהשירות שהוזמן:\nתאריך ההזמנה:");
+});
+</script>
+
+  </main>
+  <nav class="other" aria-label="מסמכים נוספים"><a href='/terms'>תקנון</a><a href='/privacy'>מדיניות פרטיות</a><a href='/refunds'>ביטולים והחזרים</a><a href='/cancel'>ביטול עסקה</a><a href='/accessibility'>נגישות</a></nav>
+</div>
+<script src="settings.js"></script>
+<script>
+Object.entries(COLORS).forEach(function(kv){document.documentElement.style.setProperty("--"+kv[0],kv[1])});
+document.querySelectorAll("[data-b]").forEach(function(el){var v=BUSINESS[el.dataset.b]||"";el.textContent=v;if(v.charAt(0)==="["||!v)el.classList.add("ph")});
+document.querySelectorAll("[data-c]").forEach(function(el){el.textContent=CONFIG[el.dataset.c]});
+document.getElementById("draft").hidden=!BUSINESS.draft;
+</script>
+</body>
+</html>

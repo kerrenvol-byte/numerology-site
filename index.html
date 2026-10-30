@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>קרן וולף | נומרולוגיה אישית</title>
+<meta name="description" content="ייעוץ והכוונה פרקטיים דרך הנומרולוגיה, בכתב ישירות למייל: מפה מלאה, שאלת פוקוס, מיקוד חודשי ומיקוד שנתי. עם קרן וולף.">
+<meta name="theme-color" content="#e9defc">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%236f8f79'/%3E%3Cg transform='translate(14 12) scale(.145)' fill='%23f7f5ef'%3E%3Cpath d='M345 44.6A262 262 0 1 0 488 437.2A239 239 0 1 1 345 44.6Z'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Gveret+Levin&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#2a1f4f;
+  --ink-soft:#5d5183;
+  --lilac:#cdbcf7;
+  --lilac-l:#eae1fd;
+  --lilac-d:#9b80ec;
+  --mint:#cfe5d5;
+  --mint-l:#ecf6ef;
+  --mint-d:#8fb59d;
+  --sage:#6f8f79;
+  --cream:#f7f5ef;
+  --white:#fff;
+  --bg-top:#e9defc;
+  --bg-mid:#f0f4fd;
+  --danger:#c0392b;
+  --display:"Suez One","Rubik",serif;
+  --hand:"Gveret Levin","Rubik",cursive;
+  --body:"Rubik",system-ui,Arial,sans-serif;
+  --stroke:2.5px solid var(--ink);
+  --pop:4px 4px 0 var(--ink);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-padding-top:20px}
+body{margin:0;font-family:var(--body);font-size:16.5px;line-height:1.65;color:var(--ink);background:linear-gradient(180deg,var(--bg-top) 0%,var(--bg-mid) 32%,var(--mint-l) 62%,#fff 100%);min-height:100vh;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;margin:0;line-height:1.15}
+p{margin:0}
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:10px}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;top:-70px;inset-inline-start:12px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:12px;z-index:200}
+.skip:focus{top:12px}
+
+/* ---------- decorative background ---------- */
+.bg{position:absolute;inset:0 0 auto 0;height:1100px;overflow:hidden;pointer-events:none;z-index:0}
+.deco{position:absolute;width:44px;height:44px;animation:float 6s ease-in-out infinite}
+.deco svg{width:100%;height:100%;display:block;overflow:visible}
+.d1{top:70px;inset-inline-start:6%;color:#fff}
+.d2{top:150px;inset-inline-end:5%;width:34px;height:34px;color:var(--mint);animation-delay:-2s}
+.d3{top:420px;inset-inline-start:3%;width:62px;height:62px;animation-delay:-1s}
+.d4{top:560px;inset-inline-end:3%;width:52px;height:52px;animation-delay:-3s}
+.d5{top:820px;inset-inline-start:8%;width:30px;height:30px;color:var(--lilac);animation-delay:-4s}
+.d6{top:960px;inset-inline-end:10%;width:40px;height:40px;color:#fff;animation-delay:-2.5s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(6deg)}}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0);opacity:1}50%{transform:scale(.72) rotate(20deg);opacity:.75}}
+@keyframes wob{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+
+.page{position:relative;z-index:1;width:min(560px,100% - 32px);margin:0 auto;padding:22px 0 110px}
+
+.demo{position:relative;z-index:2;width:max-content;max-width:calc(100% - 24px);margin:10px auto 0;background:#fff3c4;border:2px solid var(--ink);border-radius:999px;font-size:13px;padding:3px 14px;text-align:center}
+
+/* ---------- profile ---------- */
+.profile{text-align:center;padding-top:12px}
+.avatar-wrap{position:relative;width:184px;height:184px;margin:6px auto 22px}
+.avatar-wrap::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:2.5px dashed var(--ink);animation:spin 40s linear infinite}
+.avatar-wrap::after{content:"";position:absolute;inset:14px -14px -14px 14px;border-radius:44% 56% 52% 48%/52% 46% 54% 48%;background:var(--mint);border:var(--stroke);z-index:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+.avatar{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:50% 16%;border-radius:50%;border:var(--stroke);background:var(--lilac)}
+.num{position:absolute;z-index:2;width:44px;height:44px;border-radius:50%;background:#fff;border:var(--stroke);display:grid;place-items:center;font-family:var(--display);font-size:22px;box-shadow:3px 3px 0 var(--ink);animation:float 5s ease-in-out infinite}
+.num.a{top:-6px;inset-inline-start:-18px;background:var(--lilac)}
+.num.b{top:24px;inset-inline-end:-34px;animation-delay:-2s}
+.num.c{bottom:-6px;inset-inline-start:-6px;background:var(--mint);animation-delay:-3s}
+.num.logo-badge{width:64px;height:64px;padding:13px;background:var(--sage);color:var(--cream);bottom:-12px;inset-inline-start:-16px}
+.num.logo-badge img{width:100%;height:100%;object-fit:contain;display:block}
+.num.logo-badge svg{width:100%;height:100%;display:block}
+.flogo{display:block;width:104px;height:auto;margin:0 auto 18px}
+.unsure{text-align:center;margin-top:20px;color:var(--ink-soft)}
+.unsure a{font-weight:600;color:var(--ink)}
+.spark{position:absolute;z-index:2;width:30px;height:30px;color:#fff;animation:twinkle 3s ease-in-out infinite}
+.spark.a{top:-22px;inset-inline-end:20px}
+.spark.b{bottom:12px;inset-inline-end:-38px;width:24px;height:24px;color:var(--lilac);animation-delay:-1.4s}
+.profile h1{font-size:44px;letter-spacing:.01em}
+.hand{font-family:var(--hand);font-size:25px;color:var(--ink);margin-top:2px;display:inline-block;transform:rotate(-2deg)}
+.bio{color:var(--ink-soft);max-width:29em;margin:12px auto 0}
+.tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.tags li{background:#fff;border:2px solid var(--ink);border-radius:999px;padding:3px 14px;font-size:14px;font-weight:500}
+.tags li:nth-child(2){background:var(--mint)}
+.tags li:nth-child(3){background:var(--lilac)}
+.socials{display:flex;justify-content:center;gap:12px;margin-top:20px}
+.soc{width:48px;height:48px;border-radius:50%;background:#fff;border:var(--stroke);box-shadow:3px 3px 0 var(--ink);display:grid;place-items:center;text-decoration:none;transition:transform .12s,box-shadow .12s}
+.soc:hover{transform:translate(-1px,-1px) rotate(-6deg);box-shadow:5px 5px 0 var(--ink)}
+.soc:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+.soc svg{width:22px;height:22px;fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- sections ---------- */
+.block{margin-top:44px}
+.h{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:18px}
+.h h2{font-size:30px}
+.h .hand{font-size:22px;color:var(--ink-soft);margin-top:4px}
+
+/* quiz chips */
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:26px}
+.chip{border:2px solid var(--ink);background:#fff;border-radius:999px;padding:9px 18px;font-size:15.5px;font-weight:500;color:var(--ink);cursor:pointer;min-height:44px;transition:transform .12s,background .15s,box-shadow .12s;box-shadow:2px 2px 0 var(--ink)}
+.chip:hover{transform:translate(-1px,-1px) rotate(-1.5deg);box-shadow:4px 4px 0 var(--ink);background:var(--mint-l)}
+.chip:active{transform:translate(2px,2px);box-shadow:0 0 0}
+.chip[aria-pressed=true]{background:var(--lilac)}
+
+/* service link-cards */
+.svcs{display:grid;gap:16px}
+.svc{position:relative;background:var(--c,#fff);border:var(--stroke);border-radius:26px;box-shadow:var(--pop);transition:transform .15s,box-shadow .15s}
+.svc:nth-child(3n+1){--c:var(--lilac)}
+.svc:nth-child(3n+2){--c:var(--mint)}
+.svc:nth-child(3n){--c:#fff}
+.svc.glow{animation:glow 1.6s ease}
+@keyframes glow{0%,100%{transform:none}20%{transform:scale(1.03) rotate(-1deg)}40%{transform:scale(1.03) rotate(1deg)}60%{transform:scale(1.02)}}
+.svc-btn{width:100%;display:flex;align-items:center;gap:14px;text-align:start;background:none;border:0;padding:14px 16px;cursor:pointer;color:inherit;min-height:84px;border-radius:24px}
+.svc:hover:not(.open){transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.ico{flex:none;width:58px;height:58px;border-radius:18px;background:#fff;border:var(--stroke);display:grid;place-items:center;transition:transform .2s}
+.svc:hover .ico{transform:rotate(-8deg) scale(1.06)}
+.ico svg{width:38px;height:38px}
+.txt{flex:1;min-width:0}
+.txt b{font-family:var(--display);font-weight:400;font-size:23px;display:block;line-height:1.15}
+.txt small{font-size:14.5px;color:var(--ink);opacity:.8;display:block;line-height:1.35;margin-top:2px}
+.pr{flex:none;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:2px 12px;font-family:var(--display);font-size:18px;white-space:nowrap}
+.chev{flex:none;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;transition:transform .25s}
+.chev svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.svc.open .chev{transform:rotate(180deg)}
+.sticker{position:absolute;top:-16px;inset-inline-start:18px;background:#fff;border:2px solid var(--ink);border-radius:12px;padding:0 12px;font-family:var(--hand);font-size:18px;transform:rotate(-4deg);animation:wob 3.5s ease-in-out infinite;z-index:2;box-shadow:2px 2px 0 var(--ink)}
+.panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+.svc.open .panel{grid-template-rows:1fr}
+.panel > div{overflow:hidden}
+.panel-in{padding:0 20px 20px}
+.panel-in p{margin-bottom:12px}
+.incl{list-style:none;margin:0 0 14px;padding:14px 16px;background:#fff;border:2px solid var(--ink);border-radius:18px;display:grid;gap:6px;font-size:15.5px}
+.incl li{display:flex;gap:10px;align-items:flex-start}
+.incl li::before{content:"";flex:none;width:18px;height:18px;margin-top:4px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 4c2 18 8 24 28 28-20 4-26 10-28 28-2-18-8-24-28-28C24 28 30 22 32 4Z' fill='%239b80ec' stroke='%232a1f4f' stroke-width='5' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;font-size:14.5px}
+.meta span{background:rgba(255,255,255,.75);border:2px solid var(--ink);border-radius:999px;padding:0 12px}
+
+/* main buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:999px;border:var(--stroke);background:var(--ink);color:#fff;font:600 17px/1 var(--body);cursor:pointer;text-decoration:none;box-shadow:4px 4px 0 var(--lilac-d);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--lilac-d)}
+.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--lilac-d)}
+.btn.mint{background:var(--mint);color:var(--ink);box-shadow:var(--pop)}
+.btn.mint:hover{box-shadow:6px 6px 0 var(--ink)}
+.btn.mint:active{box-shadow:0 0 0}
+.btn.white{background:#fff;color:var(--ink);box-shadow:var(--pop)}
+.btn[disabled]{opacity:.6;cursor:wait}
+.btn.block-btn{width:100%}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* number teaser */
+.taste{background:#fff;border:var(--stroke);border-radius:28px;box-shadow:var(--pop);padding:26px 22px;text-align:center;position:relative}
+.taste .h{margin-bottom:10px}
+.taste p.lead{color:var(--ink-soft);margin-bottom:16px}
+.dateRow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.dateRow input{flex:1 1 170px;min-height:54px;padding:0 16px;border:var(--stroke);border-radius:16px;background:var(--lilac-l);font:500 17px var(--body);color:var(--ink);text-align:center}
+.result{margin-top:22px;display:none}
+.result.show{display:block;animation:rise .5s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.bubble{position:relative;width:118px;height:118px;margin:0 auto 12px;border-radius:50%;background:var(--mint);border:var(--stroke);box-shadow:var(--pop);display:grid;place-items:center;font-family:var(--display);font-size:64px;line-height:1;animation:pop .6s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes pop{from{transform:scale(.2) rotate(-40deg);opacity:0}to{transform:none;opacity:1}}
+.bubble .spark{width:26px;height:26px}
+.result h3{font-size:26px}
+.result .note{font-size:14px;color:var(--ink-soft);margin:10px 0 16px}
+
+/* about */
+.about{background:var(--lilac);border:var(--stroke);border-radius:28px;box-shadow:var(--pop);padding:28px 24px;position:relative}
+.about h2{font-size:30px;margin-bottom:12px}
+.about p{margin-bottom:12px}
+.quote{font-family:var(--hand);font-size:25px;line-height:1.3;background:#fff;border:2px solid var(--ink);border-radius:20px;padding:14px 18px;margin:16px 0;transform:rotate(-1deg)}
+.creds{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.creds li{background:#fff;border:2px solid var(--ink);border-radius:999px;padding:2px 14px;font-size:14.5px}
+
+/* testimonials */
+.tcard{background:#fff;border:var(--stroke);border-radius:24px;box-shadow:var(--pop);padding:20px 22px;margin-bottom:16px}
+.tcard p{font-family:var(--hand);font-size:23px;line-height:1.35}
+.tcard cite{display:block;margin-top:8px;font-size:14px;font-style:normal;color:var(--ink-soft)}
+
+/* faq */
+.faq{display:grid;gap:12px}
+details{background:#fff;border:var(--stroke);border-radius:20px;box-shadow:3px 3px 0 var(--ink);transition:background .2s}
+details[open]{background:var(--mint-l)}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;font-weight:500;min-height:54px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";flex:none;width:28px;height:28px;border-radius:50%;background:var(--lilac);border:2px solid var(--ink);display:grid;place-items:center;font-size:20px;line-height:1;transition:transform .2s}
+details[open] summary::after{content:"–"}
+details p{padding:0 18px 16px;color:var(--ink-soft)}
+
+/* footer */
+footer{margin-top:44px;text-align:center;font-size:14px;color:var(--ink-soft)}
+footer .links{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 8px;margin-bottom:12px}
+footer .links a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px}
+footer a{color:var(--ink)}
+footer .dis{max-width:34em;margin:0 auto;font-size:13px;line-height:1.55}
+.mini-cta{display:flex;justify-content:center;margin-top:30px}
+
+/* floating whatsapp */
+.wa{position:fixed;z-index:40;inset-inline-start:16px;bottom:16px;width:56px;height:56px;border-radius:50%;background:var(--mint);border:var(--stroke);box-shadow:var(--pop);display:grid;place-items:center;text-decoration:none;transition:transform .12s,box-shadow .12s}
+.wa:hover{transform:translate(-2px,-2px) rotate(-6deg);box-shadow:6px 6px 0 var(--ink)}
+.wa svg{width:26px;height:26px;fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- checkout sheet ---------- */
+.veil{position:fixed;inset:0;z-index:100;background:rgba(42,31,79,.55);display:flex;align-items:flex-end;justify-content:center;animation:fade .2s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.sheet{position:relative;width:min(560px,100%);max-height:94vh;overflow:auto;background:linear-gradient(180deg,var(--lilac-l),#fff 30%);border:var(--stroke);border-bottom:0;border-radius:30px 30px 0 0;padding:22px 20px 28px;animation:up .3s cubic-bezier(.2,.9,.3,1)}
+@keyframes up{from{transform:translateY(60px);opacity:0}to{transform:none;opacity:1}}
+@media (min-width:640px){.veil{align-items:center;padding:20px}.sheet{border-bottom:var(--stroke);border-radius:30px;box-shadow:8px 8px 0 var(--ink);max-height:90vh}}
+.x{position:absolute;top:14px;inset-inline-start:14px;width:44px;height:44px;border-radius:50%;background:#fff;border:var(--stroke);font-size:24px;line-height:1;cursor:pointer;display:grid;place-items:center;color:var(--ink)}
+.x:hover{background:var(--mint)}
+.steps{display:flex;justify-content:center;gap:8px;margin:2px 0 14px}
+.steps i{width:34px;height:10px;border-radius:99px;background:#fff;border:2px solid var(--ink);transition:background .2s,width .2s}
+.steps i.on{background:var(--lilac-d);width:52px}
+.steps i.done{background:var(--mint-d)}
+.sheet h3{font-size:28px;text-align:center;margin:8px 44px 4px}
+.sheet .sub{text-align:center;color:var(--ink-soft);margin-bottom:18px;font-size:15.5px}
+.strip{display:flex;align-items:center;gap:12px;background:var(--mint);border:var(--stroke);border-radius:18px;padding:10px 14px;margin-bottom:18px}
+.strip .ico{width:46px;height:46px;border-radius:14px}
+.strip .ico svg{width:30px;height:30px}
+.strip b{font-family:var(--display);font-weight:400;font-size:20px;display:block;line-height:1.15}
+.strip small{font-size:13.5px}
+.strip .pr{margin-inline-start:auto}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px 12px}
+.f{display:flex;flex-direction:column;gap:5px}
+.f.full{grid-column:1/-1}
+.f label{font-weight:500;font-size:15px}
+.opt{font-weight:400;color:var(--ink-soft);font-size:13.5px}
+.f input,.f select,.f textarea{width:100%;min-height:52px;padding:10px 14px;border:var(--stroke);border-radius:16px;background:#fff;font:400 16.5px var(--body);color:var(--ink)}
+.f textarea{min-height:110px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;box-shadow:3px 3px 0 var(--lilac-d);background:var(--lilac-l)}
+.f input[disabled]{background:#eee;opacity:.6}
+.hint{font-size:13.5px;color:var(--ink-soft)}
+.err{display:none;font-size:13.5px;color:var(--danger);font-weight:600}
+.f.bad input,.f.bad select,.f.bad textarea{border-color:var(--danger)}
+.f.bad .err{display:block}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.check input{width:22px;height:22px;min-height:0;margin-top:2px;accent-color:var(--ink);flex:none}
+.group-title{grid-column:1/-1;font-family:var(--display);font-size:21px;margin-top:6px}
+.actions{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.link{background:none;border:0;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px;font:500 15px var(--body);cursor:pointer;padding:10px;min-height:44px}
+.paybox{background:#fff;border:2.5px dashed var(--ink);border-radius:20px;padding:22px;text-align:center}
+.paybox .lock{font-size:30px}
+.paybox h4{font-size:21px;margin:6px 0}
+.paybox p{color:var(--ink-soft);font-size:15px}
+.total{display:flex;justify-content:space-between;align-items:center;margin:16px 4px 0;font-size:16px}
+.total b{font-family:var(--display);font-weight:400;font-size:30px}
+.pr small,.strip .pr small{display:block;font-family:inherit;font-size:13px;line-height:1.2;text-align:center;opacity:.8}
+.payframe{width:100%;height:600px;border:0;border-radius:16px;background:#fff}
+.done{text-align:center;padding:10px 0 4px;position:relative}
+.done .bubble{background:var(--lilac)}
+.done ol{display:inline-block;text-align:start;padding-inline-start:20px;color:var(--ink-soft);margin:14px 0 6px}
+.conf{position:absolute;top:60px;left:50%;width:0;height:0;pointer-events:none}
+.conf i{position:absolute;width:16px;height:16px;background:currentColor;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);animation:burst 1.1s ease-out forwards}
+@keyframes burst{to{transform:translate(var(--x),var(--y)) rotate(200deg) scale(.4);opacity:0}}
+
+@media (max-width:460px){
+  .profile h1{font-size:38px}
+  .fields{grid-template-columns:1fr}
+  .pr{font-size:16px;padding:1px 10px}
+  .txt b{font-size:21px}
+  .d3,.d4{display:none}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ============ illustrations (inline SVG sprite) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="sparkle" viewBox="0 0 64 64"><path d="M32 4c2 18 8 24 28 28-20 4-26 10-28 28-2-18-8-24-28-28C24 28 30 22 32 4Z" fill="currentColor" style="stroke:var(--ink)" stroke-width="3" stroke-linejoin="round"/></symbol>
+    <symbol id="moon" viewBox="0 0 64 64"><path d="M40 5A27 27 0 1 0 59 44 21 21 0 0 1 40 5Z" fill="currentColor" style="stroke:var(--ink)" stroke-width="3" stroke-linejoin="round"/><circle cx="24" cy="40" r="3" style="fill:var(--ink)"/><circle cx="34" cy="50" r="2" style="fill:var(--ink)"/></symbol>
+    <symbol id="planet" viewBox="0 0 64 64"><circle cx="32" cy="32" r="15" fill="currentColor" style="stroke:var(--ink)" stroke-width="3"/><ellipse cx="32" cy="34" rx="28" ry="8" transform="rotate(-18 32 32)" fill="none" style="stroke:var(--ink)" stroke-width="3"/></symbol>
+
+    <symbol id="i-full" viewBox="0 0 64 64"><g style="stroke:var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path fill="none" d="M32 4v8M32 52v8M4 32h8M52 32h8M12 12l5 5M47 47l5 5M12 52l5-5M47 17l5-5"/><circle cx="32" cy="32" r="15" fill="#fff"/><circle cx="32" cy="32" r="7" style="fill:var(--lilac-d)"/></g></symbol>
+    <symbol id="i-focus" viewBox="0 0 64 64"><g style="stroke:var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 36C14 20 50 20 60 36 50 52 14 52 4 36Z" fill="#fff"/><circle cx="32" cy="36" r="9" style="fill:var(--lilac-d)"/><circle cx="32" cy="36" r="3.5" style="fill:var(--ink)"/><path fill="none" d="M32 6v7M18 10l3 6M46 10l-3 6"/></g></symbol>
+    <symbol id="i-month" viewBox="0 0 64 64"><g style="stroke:var(--ink)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M38 6A26 26 0 1 0 58 44 20 20 0 0 1 38 6Z" fill="#fff"/><path d="M50 10c1 5 3 7 8 8-5 1-7 3-8 8-1-5-3-7-8-8 5-1 7-3 8-8Z" style="fill:var(--lilac-d)"/></g></symbol>
+    <symbol id="i-year" viewBox="0 0 64 64"><g style="stroke:var(--ink)" stroke-width="3" stroke-linecap="round"><circle cx="32" cy="32" r="14" style="fill:var(--mint)"/><ellipse cx="32" cy="34" rx="27" ry="8" transform="rotate(-18 32 32)" fill="none"/></g></symbol>
+    <symbol id="ch" viewBox="0 0 16 16"><path d="M3 6l5 5 5-5" fill="none"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">דילוג לתוכן</a>
+
+<div class="bg" aria-hidden="true">
+  <div class="deco d1"><svg><use href="#sparkle"/></svg></div>
+  <div class="deco d2"><svg><use href="#sparkle"/></svg></div>
+  <div class="deco d3" style="color:#fff"><svg><use href="#moon"/></svg></div>
+  <div class="deco d4" style="color:var(--mint)"><svg><use href="#planet"/></svg></div>
+  <div class="deco d5"><svg><use href="#sparkle"/></svg></div>
+  <div class="deco d6"><svg><use href="#sparkle"/></svg></div>
+</div>
+
+<div class="demo" id="demoBar" hidden data-t="demoBar"></div>
+
+<main class="page" id="main">
+
+  <!-- ============ profile ============ -->
+  <header class="profile" id="top">
+    <div class="avatar-wrap">
+      <img class="avatar" src="assets/keren.jpg" alt="קרן וולף" width="184" height="184" fetchpriority="high">
+      <span class="num a" aria-hidden="true">3</span>
+      <span class="num b" aria-hidden="true">7</span>
+      <span class="num c logo-badge" role="img" aria-label="Wolf"><img src="assets/logo-icon.svg" alt="" width="38" height="41"></span>
+      <svg class="spark a" aria-hidden="true"><use href="#sparkle"/></svg>
+      <svg class="spark b" aria-hidden="true"><use href="#sparkle"/></svg>
+    </div>
+    <h1 data-t="name"></h1>
+    <p class="hand" data-t="tagline"></p>
+    <p class="bio" data-t="bio"></p>
+    <ul class="tags" id="tags"></ul>
+    <div class="socials">
+      <a class="soc" id="waTop" href="#" aria-label="וואטסאפ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20.500l1.500-4.300A8.500 8.500 0 1 1 20.500 11.500Z"/><path d="M9 8.500c.3 3.300 2.700 5.700 6 6l1.200-1.300-2.200-1-1 .9c-1-.4-1.900-1.300-2.300-2.300l.9-1-1-2.200Z"/></svg></a>
+      <a class="soc" id="mailTop" href="#" aria-label="שליחת מייל"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 8 8 6 8-6"/></svg></a>
+      <a class="soc" id="telTop" href="#" aria-label="חיוג"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></a>
+    </div>
+  </header>
+
+  <!-- ============ services ============ -->
+  <section class="block" id="services" aria-labelledby="svcH">
+    <div class="h"><h2 id="svcH" data-t="servicesTitle"></h2><span class="hand" data-t="servicesHint"></span></div>
+    <div class="chips" id="quiz" role="group" aria-label="מה מעסיק אותך?"></div>
+    <div class="svcs" id="svcList"></div>
+    <p class="unsure"><span data-t="unsureText"></span> <a id="waHelp" href="#" target="_blank" rel="noopener" data-t="unsureLink"></a></p>
+  </section>
+
+  <!-- ============ number teaser ============ -->
+  <section class="block" id="taste" aria-labelledby="tasteH">
+    <div class="taste">
+      <div class="h"><h2 id="tasteH" data-t="tasteTitle"></h2><span class="hand" data-t="tasteHint"></span></div>
+      <p class="lead" data-t="tasteLead"></p>
+      <form class="dateRow" id="numForm">
+        <label for="nDate" class="sr">תאריך לידה</label>
+        <input id="nDate" type="date" required max="" aria-describedby="nRes">
+        <button class="btn mint" type="submit" data-t="tasteButton"></button>
+      </form>
+      <div class="result" id="nRes" aria-live="polite">
+        <div class="bubble" id="nBubble"></div>
+        <h3 id="nTitle"></h3>
+        <p id="nText" style="margin-top:6px"></p>
+        <p class="note" data-t="tasteNote"></p>
+        <a class="btn" href="#services" id="nCta" data-t="tasteCta"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ about ============ -->
+  <section class="block" id="about">
+    <div class="about">
+      <h2 data-t="aboutTitle"></h2>
+      <p data-t="aboutP1"></p>
+      <p data-t="aboutP2"></p>
+      <div class="quote" data-t="aboutQuote"></div>
+      <ul class="creds" id="creds"></ul>
+    </div>
+  </section>
+
+  <!-- ============ testimonials (only if filled) ============ -->
+  <section class="block" id="proof" hidden>
+    <div class="h"><h2 data-t="proofTitle"></h2></div>
+    <div id="tlist"></div>
+  </section>
+
+  <!-- ============ faq ============ -->
+  <section class="block" id="faq" aria-labelledby="faqH">
+    <div class="h"><h2 id="faqH" data-t="faqTitle"></h2></div>
+    <div class="faq" id="faqList"></div>
+    <div class="mini-cta"><a class="btn" href="#services" data-t="faqCta"></a></div>
+  </section>
+
+  <footer>
+    <img class="flogo" src="assets/logo-full.svg" alt="Wolf" width="104" height="183">
+    <nav class="links" id="legalLinks" aria-label="מסמכים נוספים"></nav>
+    <p class="dis" data-t="disclaimer"></p>
+    <p id="contactLine" style="margin-top:10px;direction:ltr;user-select:all"></p>
+    <p style="margin-top:12px" data-t="copyright"></p>
+  </footer>
+</main>
+
+<aside aria-label="שיחה בוואטסאפ"><a class="wa" id="waFloat" href="#" aria-label="שיחה בוואטסאפ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.500 11.500a8.500 8.500 0 0 1-12.600 7.400L3.500 20.500l1.500-4.300A8.500 8.500 0 1 1 20.500 11.500Z"/><path d="M9 8.500c.3 3.300 2.700 5.700 6 6l1.200-1.300-2.200-1-1 .9c-1-.4-1.900-1.300-2.300-2.300l.9-1-1-2.200Z"/></svg></a></aside>
+
+<!-- ============ checkout sheet ============ -->
+<div class="veil" id="veil" hidden>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shTitle" tabindex="-1">
+    <button class="x" id="closeBtn" aria-label="סגירה">×</button>
+    <!-- step: details (אחרי התשלום ב-GROW חוזרים לכאן: ?status=success&service=ID) -->
+    <form id="pForm" novalidate>
+      <h3 id="shTitle">עוד כמה פרטים להכנת הייעוץ</h3>
+      <p class="sub">אחרי התשלום אני צריכה כמה פרטים כדי להכין את הייעוץ. כל מה שתכתבי נשאר בינינו ומשמש רק לכך.</p>
+      <div class="strip" id="strip1"></div>
+      <div class="f full" id="svcPick" hidden style="margin-bottom:14px"><label for="svcSel">איזה שירות הזמנת?</label><select id="svcSel"></select></div>
+      <div class="fields" id="fields"></div>
+      <p class="hint" style="margin-top:14px">הפרטים שסומנו כחובה נחוצים להכנת הייעוץ ונשמרים לשם כך בלבד. מי מקבל אותם, כמה זמן נשמרים ואיך מבקשים לעיין או למחוק: <a href='/privacy' rel='noopener' target='_blank'>מדיניות הפרטיות</a>.</p>
+      <p class="err" id="saveErr" role="alert" style="text-align:center;margin-top:10px"></p>
+      <div class="actions">
+        <button class="btn block-btn" type="submit" id="fSubmit">שליחת הפרטים ←</button>
+        <button class="link" type="button" data-close>אמלא מאוחר יותר</button>
+      </div>
+    </form>
+
+    <!-- step: done -->
+    <div id="pDone" hidden class="done">
+      <div class="conf" id="conf" aria-hidden="true"></div>
+      <div class="bubble" aria-hidden="true">✓</div>
+      <h3 id="doneTitle" tabindex="-1" style="margin-inline:0">תודה, הפרטים התקבלו</h3>
+      <p class="sub" style="margin-top:6px">אישור התשלום נשלח למייל שלך. אם הוא לא הגיע, כדאי להציץ בספאם.</p>
+      <ol><li id="doneEta"></li><li>אם אצטרך פרט נוסף, אפנה אלייך בוואטסאפ או במייל.</li></ol>
+      <div class="actions"><button class="btn block-btn" type="button" data-close>סגירה</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- טופס נסתר ש-Netlify מזהה בזמן ההעלאה (Netlify Forms). אם מוגדר formsAccessKey ב-settings.js, נשלח במקום זה ל-Web3Forms -->
+<form hidden method='POST' name='order'><input type='hidden' name='form-name' value='order' />
+  <input name="bot-field"><input name="orderId"><input name="service"><input name="price">
+  <input name="fullName"><input name="email"><input name="phone"><input name="birthDate"><input name="birthName"><input name="birthTime"><input name="noTime">
+  <input name="question"><input name="note"><input name="month"><input name="year"><input name="terms">
+</form><script src="settings.js"></script>
+<script>
+/* =====================================================================
+   helpers
+   ===================================================================== */
+const $  = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+const fmt = n => n.toLocaleString("he-IL")+" "+CONFIG.currency;
+const wa = t => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(t)}`;
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const store = { get(k){try{return JSON.parse(sessionStorage.getItem(k))}catch(e){return null}}, set(k,v){try{sessionStorage.setItem(k,JSON.stringify(v))}catch(e){}} };
+const ico = (id,cls="") => `<svg class="${cls}" viewBox="0 0 64 64" aria-hidden="true"><use href="#${id}"/></svg>`;
+
+let state = { service:null, values:{}, lastFocus:null };
+
+/* ---------- פיקסל של Meta: נטען רק אם מוגדר CONFIG.metaPixelId ב-settings.js. שום פרט מהטופס לא נשלח אליו ---------- */
+if (CONFIG.metaPixelId){
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
+  fbq("init",CONFIG.metaPixelId);
+  fbq("track","PageView");
+}
+const track = (ev,data) => { if(window.fbq) fbq("track",ev,data); };
+
+/* ---------- החלת ההגדרות מ-settings.js ---------- */
+Object.entries(COLORS).forEach(([k,v])=>document.documentElement.style.setProperty("--"+k,v));
+$$("[data-t]").forEach(el=>{const v=TEXT[el.dataset.t]; if(v!=null) el.textContent=v});
+$("#tags").innerHTML = TEXT.tags.map(t=>`<li>${esc(t)}</li>`).join("");
+$("#creds").innerHTML = TEXT.creds.map(t=>`<li>${esc(t)}</li>`).join("");
+$("#creds").hidden = !TEXT.creds.length;
+$("#legalLinks").innerHTML = Object.values(LEGAL).map(l=>`<a href="${esc(l.href)}">${esc(l.label)}</a>`).join("");
+$("#mailTop").href = "mailto:"+CONFIG.email;
+$("#telTop").href = "tel:"+CONFIG.phoneLink;
+$("#contactLine").textContent = CONFIG.email+" · "+CONFIG.phoneDisplay;
+
+if (CONFIG.demo) $("#demoBar").hidden = false;
+const waGeneral = wa("היי קרן, אשמח לעזרה בבחירת ייעוץ נומרולוגי אישי.");
+["waTop","waHelp","waFloat"].forEach(id=>{$("#"+id).href=waGeneral});
+
+/* ---------- services list (accordion) ---------- */
+$("#svcList").innerHTML = SERVICES.map(s=>`
+<article class="svc" data-id="${s.id}">
+  ${s.feat?'<span class="sticker">הכי נבחרת ✦</span>':""}
+  <button class="svc-btn" aria-expanded="false" aria-controls="pn-${s.id}" id="bt-${s.id}">
+    <span class="ico">${ico(s.icon)}</span>
+    <span class="txt"><b>${esc(s.name)}</b><small>${esc(s.sub)}</small></span>
+    <span class="pr">${fmt(s.price)}<small>מחיר סופי</small></span>
+    <span class="chev"><svg viewBox="0 0 16 16"><use href="#ch"/></svg></span>
+  </button>
+  <div class="panel" id="pn-${s.id}" role="region" aria-labelledby="bt-${s.id}" inert>
+    <div><div class="panel-in">
+      <p>${esc(s.desc)}</p>
+      <ul class="incl">${s.includes.map(i=>`<li>${esc(i)}</li>`).join("")}</ul>
+      <div class="meta"><span>✦ ${esc(s.delivery)}</span><span>✦ בכתב, למייל</span></div>
+      <button class="btn block-btn" data-order="${s.id}">להזמנה ←</button>
+    </div></div>
+  </div>
+</article>`).join("");
+
+function toggle(id,force){
+  $$(".svc").forEach(el=>{
+    const on = el.dataset.id===id ? (force ?? !el.classList.contains("open")) : false;
+    el.classList.toggle("open",on);
+    $(".svc-btn",el).setAttribute("aria-expanded",on);
+    const p=$(".panel",el); on ? p.removeAttribute("inert") : p.setAttribute("inert","");
+  });
+}
+$("#svcList").addEventListener("click",e=>{
+  const o=e.target.closest("[data-order]"); if(o){goPay(o.dataset.order);return}
+  const b=e.target.closest(".svc-btn"); if(b) toggle(b.closest(".svc").dataset.id);
+});
+
+/* ---------- quiz ---------- */
+$("#quiz").innerHTML = QUIZ.map(([t,id])=>`<button type="button" class="chip" data-q="${id}" aria-pressed="false">${esc(t)}</button>`).join("");
+$("#quiz").addEventListener("click",e=>{
+  const c=e.target.closest("[data-q]"); if(!c) return;
+  $$(".chip").forEach(x=>x.setAttribute("aria-pressed",x===c));
+  const el=$(`.svc[data-id="${c.dataset.q}"]`);
+  toggle(c.dataset.q,true);
+  el.scrollIntoView({behavior:"smooth",block:"center"});
+  el.classList.remove("glow"); void el.offsetWidth; el.classList.add("glow");
+});
+
+/* ---------- number teaser ---------- */
+const dsum = n => String(n).split("").reduce((a,d)=>a+ +d,0);
+const red  = n => { while(n>9 && ![11,22,33].includes(n)) n=dsum(n); return n; };
+$("#nDate").max = new Date().toISOString().slice(0,10);
+$("#numForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const v=$("#nDate").value; if(!v) return;
+  const [y,m,d]=v.split("-").map(Number);
+  const n=red(red(d)+red(m)+red(y));
+  const [t,txt]=NUM[n];
+  $("#nBubble").innerHTML=`${n}<svg class="spark" style="top:-8px;inset-inline-end:-8px" aria-hidden="true"><use href="#sparkle"/></svg><svg class="spark" style="bottom:2px;inset-inline-start:-14px;color:var(--lilac);animation-delay:-1s" aria-hidden="true"><use href="#sparkle"/></svg>`;
+  $("#nTitle").textContent=`מספר ${n} · ${t}`;
+  $("#nText").textContent=txt;
+  const r=$("#nRes"); r.classList.remove("show"); void r.offsetWidth; r.classList.add("show");
+  r.scrollIntoView({behavior:"smooth",block:"nearest"});
+});
+
+/* ---------- faq / testimonials ---------- */
+$("#faqList").innerHTML = FAQ.map(([q,a])=>`<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
+if (TESTIMONIALS.length){ $("#proof").hidden=false; $("#tlist").innerHTML=TESTIMONIALS.map(t=>`<figure class="tcard" style="margin:0 0 16px"><p>״${esc(t.text)}״</p><cite>${esc(t.by)}</cite></figure>`).join(""); }
+
+/* =====================================================================
+   checkout sheet
+   ===================================================================== */
+function fld({name,label,type="text",req,hint,opts,rows,full,ac}){
+  const id="f_"+name, r=req?" required":"", o=req?"":' <span class="opt">(לא חובה)</span>';
+  let ctl;
+  if(type==="textarea") ctl=`<textarea id="${id}" name="${name}" rows="${rows||4}"${r}></textarea>`;
+  else if(type==="select") ctl=`<select id="${id}" name="${name}"${r}><option value="">בחרי…</option>${opts.map(x=>`<option>${esc(x)}</option>`).join("")}</select>`;
+  else ctl=`<input id="${id}" name="${name}" type="${type}"${r}${ac?` autocomplete="${ac}"`:""}${type==="email"||type==="tel"?' dir="ltr" style="text-align:right"':""}>`;
+  return `<div class="f${full?" full":""}" data-f="${name}"><label for="${id}">${label}${o}</label>${ctl}${hint?`<span class="hint">${hint}</span>`:""}<span class="err"></span></div>`;
+}
+const monthOpts=()=>{const d=new Date();return [0,1,2,3,4,5].map(i=>new Date(d.getFullYear(),d.getMonth()+i,1).toLocaleDateString("he-IL",{month:"long",year:"numeric"}))};
+const yearOpts=()=>{const y=new Date().getFullYear();return [String(y),String(y+1)]};
+const EXTRA = {
+  question:()=>fld({name:"question",label:"השאלה שלך",type:"textarea",req:true,rows:5,full:true,hint:"אפשר לכתוב גם רקע קצר: מה קורה עכשיו ומה את מתלבטת לגביו."}),
+  note:()=>fld({name:"note",label:"מה מעסיק אותך כרגע?",type:"textarea",rows:4,full:true,hint:"כל מה שתרצי שאדע לפני שאני כותבת."}),
+  month:()=>fld({name:"month",label:"לאיזה חודש?",type:"select",opts:monthOpts(),req:true,full:true}),
+  year:()=>fld({name:"year",label:"לאיזו שנה?",type:"select",opts:yearOpts(),req:true,full:true})
+};
+const strip = s => `<span class="ico">${ico(s.icon)}</span><span><b>${esc(s.name)}</b><small>${esc(s.delivery)}</small></span>`;
+
+function buildForm(){
+  const s=state.service;
+  $("#strip1").innerHTML=strip(s);
+  $("#fields").innerHTML =
+    fld({name:"fullName",label:"שם מלא",req:true,ac:"name",full:true})+
+    fld({name:"email",label:"מייל (לשם קבלת הייעוץ)",type:"email",req:true,ac:"email",full:true,hint:"אותו מייל ששילמת איתו, כדי שאדע לקשר בין התשלום לפרטים."})+
+    fld({name:"birthDate",label:"תאריך לידה",type:"date",req:true})+
+    fld({name:"birthName",label:"שם בלידה",hint:"אם שונה מהנוכחי."})+
+    `<div class="f full" data-f="birthTime"><label for="f_birthTime">שעת לידה <span class="opt">(לא חובה)</span></label><input id="f_birthTime" name="birthTime" type="time"><label class="check" style="margin-top:6px;font-weight:400"><input type="checkbox" id="f_noTime" name="noTime"> איני יודעת את שעת הלידה</label></div>`+
+    s.extra.map(k=>EXTRA[k]()).join("");
+  $("#f_noTime").addEventListener("change",e=>{const t=$("#f_birthTime");t.disabled=e.target.checked;if(e.target.checked)t.value=""});
+}
+
+function showPanel(n){ // 1 details, 3 done
+  $("#pForm").hidden=n!==1; $("#pDone").hidden=n!==3;
+  $("#sheet").scrollTop=0;
+  const t=$(n===1?"#shTitle":"#doneTitle"); t.setAttribute("tabindex","-1"); t.focus({preventScroll:true});
+}
+
+/* "להזמנה" עובר ישר לעמוד התשלום של GROW. אחרי התשלום GROW מחזירה לכאן (?status=success&service=ID) ונפתח טופס הפרטים */
+function goPay(id){
+  const s=SERVICES.find(x=>x.id===id); if(!s) return;
+  store.set("svc",s.id);
+  track("InitiateCheckout",{content_name:s.name,value:s.price,currency:"ILS"});
+  location.href = s.payUrl ? s.payUrl : wa(`היי קרן, אשמח להזמין ${s.name}.`);
+}
+
+function clearForm(){ $("#strip1").innerHTML=""; $("#fields").innerHTML=""; $("#fSubmit").disabled=true; }
+function openDetails(id){
+  state.service=SERVICES.find(s=>s.id===id)||null; state.lastFocus=document.activeElement;
+  $("#svcPick").hidden=!!state.service; $("#saveErr").textContent="";
+  if(state.service){ buildForm(); $("#fSubmit").disabled=false; }
+  else { $("#svcSel").innerHTML='<option value="">בחרי…</option>'+SERVICES.map(s=>`<option value="${s.id}">${esc(s.name)}</option>`).join(""); clearForm(); }
+  $("#veil").hidden=false; document.body.style.overflow="hidden"; showPanel(1);
+}
+$("#svcSel").addEventListener("change",e=>{
+  state.service=SERVICES.find(s=>s.id===e.target.value)||null;
+  if(state.service){ buildForm(); $("#fSubmit").disabled=false; } else clearForm();
+});
+function closeSheet(){ $("#veil").hidden=true; document.body.style.overflow=""; if(state.lastFocus&&state.lastFocus.focus) state.lastFocus.focus(); }
+$("#closeBtn").addEventListener("click",closeSheet);
+$$("[data-close]").forEach(b=>b.addEventListener("click",closeSheet));
+$("#veil").addEventListener("mousedown",e=>{if(e.target.id==="veil")closeSheet()});
+document.addEventListener("keydown",e=>{
+  if($("#veil").hidden) return;
+  if(e.key==="Escape") closeSheet();
+  if(e.key==="Tab"){ // focus trap
+    const f=$$("button,a[href],input,select,textarea,[tabindex]:not([tabindex='-1'])",$("#sheet")).filter(x=>!x.disabled&&x.offsetParent!==null);
+    if(!f.length) return; const a=f[0], z=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()} else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}
+  }
+});
+
+$("#pForm").addEventListener("submit",e=>{
+  e.preventDefault(); if(!state.service) return; let firstBad=null;
+  $$("#fields .f").forEach(box=>{
+    const el=$("input:not(#f_noTime),select,textarea",box); if(!el) return;
+    let msg="";
+    if(el.required&&!el.value.trim()) msg="שדה חובה.";
+    if(!msg&&el.type==="email"&&el.value&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value)) msg="כתובת המייל לא נראית תקינה.";
+    const er=$(".err",box); if(er) er.textContent=msg; box.classList.toggle("bad",!!msg); el.setAttribute("aria-invalid",!!msg);
+    if(msg&&!firstBad) firstBad=el;
+  });
+  if(firstBad){firstBad.focus();return}
+  state.values={}; $$("#fields input,#fields select,#fields textarea").forEach(el=>{state.values[el.name]= el.type==="checkbox"?el.checked:el.value});
+  // שולחים את הפרטים, ומתקבלת התראה במייל
+  const btn=$("#fSubmit"), label=btn.textContent, err=$("#saveErr");
+  err.textContent=""; btn.disabled=true; btn.textContent="שולחת את הפרטים…";
+  saveOrder().then(()=>{ store.set("svc",null); showDone(); })
+    .catch(()=>{ err.textContent="לא הצלחתי לשלוח את הפרטים. אפשר לנסות שוב, או לכתוב לי בוואטסאפ."; })
+    .finally(()=>{ btn.disabled=false; btn.textContent=label; });
+});
+
+/* שליחת פרטי ההזמנה. ברירת מחדל: Netlify Forms (הטופס הנסתר "order"). אם מוגדר CONFIG.formsAccessKey: Web3Forms */
+const FIELD_LABELS={fullName:"שם מלא",birthDate:"תאריך לידה",birthName:"שם בלידה",birthTime:"שעת לידה",noTime:"אין שעת לידה",question:"השאלה",note:"מה מעסיק אותה",month:"חודש",year:"שנה"};
+function saveOrder(){
+  const s=state.service, v=state.values, key=JSON.stringify([s.id,v]);
+  if(state.savedKey===key) return Promise.resolve();
+  const orderId=state.orderId||(state.orderId=Date.now().toString(36).toUpperCase()+Math.random().toString(36).slice(2,5).toUpperCase());
+  if(CONFIG.formsAccessKey){
+    const fields={};
+    Object.entries(v).forEach(([k,x])=>{ if(x===false||x==="") return; fields[k==="email"?"email":(FIELD_LABELS[k]||k)] = x===true?"כן":String(x); });
+    const data={access_key:CONFIG.formsAccessKey, subject:`הזמנה חדשה: ${s.name} (${orderId})`, from_name:"אתר קרן וולף", botcheck:false, "מספר הזמנה":orderId, "שירות":s.name, "מחיר":String(s.price)+" ₪", ...fields};
+    return fetch(CONFIG.formsEndpoint,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
+      .then(r=>r.json().catch(()=>({}))).then(j=>{ if(!j.success) throw new Error("save failed"); state.savedKey=key; });
+  }
+  const body=new URLSearchParams({"form-name":"order","bot-field":"",orderId,service:s.name,price:String(s.price),...Object.fromEntries(Object.entries(v).map(([k,x])=>[k,x===true?"כן":x===false?"":String(x)]))});
+  return fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:body.toString()})
+    .then(r=>{ if(!r.ok) throw new Error("save failed"); state.savedKey=key; });
+}function confetti(){
+  const c=$("#conf"); c.innerHTML=""; const cols=["#9b80ec","#8fb59d","#cdbcf7","#cfe5d5","#2a1f4f"];
+  for(let i=0;i<22;i++){const p=document.createElement("i");const a=Math.random()*Math.PI*2,d=70+Math.random()*110;
+    p.style.setProperty("--x",Math.cos(a)*d+"px");p.style.setProperty("--y",Math.sin(a)*d+"px");p.style.color=cols[i%cols.length];p.style.animationDelay=(Math.random()*.15)+"s";c.appendChild(p)}
+}
+function showDone(){
+  const s=state.service;
+  $("#doneEta").textContent = s ? `אכין את הייעוץ הנומרולוגי (${s.name}) ואשלח אותו למייל שלך, ${s.delivery}.` : "אכין את הייעוץ הנומרולוגי ואשלח אותו למייל שלך, בהתאם לזמן האספקה של השירות שהזמנת.";
+  if($("#veil").hidden){ $("#veil").hidden=false; document.body.style.overflow="hidden"; }
+  showPanel(3); confetti();
+}
+
+/* חזרה מ-GROW אחרי תשלום, או כניסה ישירה מהקישור במייל: ?details=ID */
+const q=new URLSearchParams(location.search);
+if(q.get("status")==="success"&&!store.get("purchased")){ // נספר פעם אחת גם אם הדף מתרענן
+  const bought=SERVICES.find(s=>s.id===(q.get("service")||store.get("svc")));
+  if(bought){ track("Purchase",{content_name:bought.name,value:bought.price,currency:"ILS"}); store.set("purchased",true); }
+}
+if(q.get("status")==="success"||q.get("details")) openDetails(q.get("service")||q.get("details")||store.get("svc")||"");</script>
+</body>
+</html>
