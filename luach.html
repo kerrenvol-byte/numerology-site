@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>לוח העיתוי האישי | קרן וולף</title>
+<meta name="description" content="לוח העיתוי האישי: בדיקת החלטה לפי תאריך, הימים המתאימים ביותר, לוח ימים אישיים, רבעונים וחודשים.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#e9defc">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%236f8f79'/%3E%3Cg transform='translate(14 12) scale(.145)' fill='%23f7f5ef'%3E%3Cpath d='M345 44.6A262 262 0 1 0 488 437.2A239 239 0 1 1 345 44.6Z'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Gveret+Levin&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2a1f4f;--ink-soft:#5d5183;--lilac:#cdbcf7;--lilac-l:#eae1fd;--lilac-d:#9b80ec;--mint:#cfe5d5;--mint-l:#ecf6ef;--mint-d:#8fb59d;--sage:#6f8f79;--cream:#f7f5ef;--bg-top:#e9defc;--bg-mid:#f0f4fd;--danger:#c0392b;
+  --display:"Suez One","Rubik",serif;--hand:"Gveret Levin","Rubik",cursive;--body:"Rubik",system-ui,Arial,sans-serif;--stroke:2.5px solid var(--ink);--pop:4px 4px 0 var(--ink)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-padding-top:16px}
+body{margin:0;font:400 16.5px/1.65 var(--body);color:var(--ink);background:linear-gradient(180deg,var(--bg-top) 0,var(--bg-mid) 420px,var(--mint-l) 1100px,#fff 100%);min-height:100vh;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;margin:0;line-height:1.15}
+p{margin:0}
+a{color:inherit}
+button{font-family:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:10px}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.page{width:min(680px,100% - 32px);margin:0 auto;padding:20px 0 120px}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.top a{display:inline-flex;align-items:center;min-height:44px;font-weight:500}
+.top img{width:34px;height:auto}
+.hero{text-align:center;margin-bottom:8px}
+.hero h1{font-size:40px}
+.hero .hand{font-family:var(--hand);font-size:24px;display:inline-block;transform:rotate(-2deg);margin-top:2px}
+.lead{color:var(--ink-soft)}
+
+.banner{background:#fff;border:var(--stroke);border-radius:20px;box-shadow:3px 3px 0 var(--ink);padding:14px 16px;margin:18px 0 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 14px}
+.banner p{flex:1 1 240px}
+.banner.ok{background:var(--mint)}
+
+.card{background:#fff;border:var(--stroke);border-radius:28px;box-shadow:var(--pop);padding:24px 20px;margin-top:26px}
+.card.lilac{background:var(--lilac)}
+.card.mint{background:var(--mint)}
+.card > h2{font-size:28px;margin-bottom:6px}
+.card > .lead{margin-bottom:16px}
+.card h3{font-size:22px}
+
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.f{flex:1 1 180px;display:flex;flex-direction:column;gap:5px;font-weight:500;font-size:15px}
+.f input,.f select{width:100%;min-height:54px;padding:0 14px;border:var(--stroke);border-radius:16px;background:var(--lilac-l);font:500 17px var(--body);color:var(--ink)}
+.f input[disabled]{background:#f1f1f1;color:var(--ink-soft)}
+.hint{font-size:13.5px;color:var(--ink-soft);font-weight:400}
+.err{flex-basis:100%;margin:0;color:var(--danger);font-weight:600;font-size:14.5px}
+.err:empty{display:none}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;border:var(--stroke);background:var(--ink);color:#fff;font:600 17px/1.2 var(--body);cursor:pointer;text-decoration:none;box-shadow:4px 4px 0 var(--lilac-d);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--lilac-d)}
+.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--lilac-d)}
+.btn.mint{background:var(--mint);color:var(--ink);box-shadow:var(--pop)}
+.btn.white{background:#fff;color:var(--ink);box-shadow:var(--pop)}
+.btn.wide{width:100%}
+.btn.sm{min-height:44px;padding:0 18px;font-size:15.5px}
+.link{background:none;border:0;color:var(--ink);text-decoration:underline;text-underline-offset:4px;font:500 15.5px var(--body);cursor:pointer;padding:10px 4px;min-height:44px}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:2px solid var(--ink);background:#fff;border-radius:999px;padding:8px 16px;font-size:15.5px;font-weight:500;cursor:pointer;min-height:44px;box-shadow:2px 2px 0 var(--ink);transition:transform .12s,box-shadow .12s,background .15s}
+.chip:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink);background:var(--mint-l)}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff}
+.dec-hint{margin:10px 2px 0;color:var(--ink-soft);font-size:15px;min-height:1.6em}
+
+.dates{display:grid;gap:10px;margin:16px 0 4px}
+.dates .f{flex:none}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+.actions .btn{flex:1 1 220px}
+
+.verdict{border:var(--stroke);border-radius:22px;padding:16px 18px;background:#fff;box-shadow:3px 3px 0 var(--ink);margin-top:16px}
+.verdict.v2{background:var(--mint)}
+.verdict.v1{background:var(--lilac-l)}
+.verdict .tag{display:inline-block;background:var(--ink);color:#fff;border-radius:999px;padding:0 12px;font-size:13.5px;font-weight:600;margin-bottom:6px}
+.verdict h3{font-size:22px;margin-bottom:4px}
+.verdict ul{list-style:none;margin:10px 0;padding:0;display:grid;gap:6px;font-size:15px}
+.verdict li{display:flex;justify-content:space-between;gap:10px;background:rgba(255,255,255,.85);border:2px solid var(--ink);border-radius:12px;padding:4px 12px}
+.verdict li em{font-style:normal;font-weight:600;white-space:nowrap}
+.verdict .dw{font-size:15px}
+.verdict .dw b{font-weight:600}
+.me{margin-top:16px;padding:14px 16px;border:2px dashed var(--ink);border-radius:18px;background:var(--cream)}
+.me b{font-weight:600}
+
+.best{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
+.best li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;border:2px solid var(--ink);border-radius:14px;padding:8px 14px;background:var(--mint-l)}
+.best li.maybe{background:var(--lilac-l)}
+.best b{font-weight:600}
+
+/* calendar */
+.cal-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 0 12px}
+.cal-head h3{font-size:22px;text-align:center;flex:1}
+.nav{width:46px;height:46px;border-radius:50%;border:var(--stroke);background:#fff;font-size:22px;line-height:1;cursor:pointer;box-shadow:2px 2px 0 var(--ink)}
+.nav[disabled]{opacity:.35;cursor:default;box-shadow:none}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal .wd{text-align:center;font-size:13.5px;font-weight:600;color:var(--ink-soft);padding:2px 0}
+.day{position:relative;aspect-ratio:1/1.08;min-height:52px;border:2px solid var(--ink);border-radius:14px;background:#fff;cursor:pointer;padding:3px 2px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.1}
+.day small{font-size:12px;color:var(--ink-soft)}
+.day b{font-family:var(--display);font-weight:400;font-size:21px}
+.day i{font-style:normal;font-size:10px;line-height:1}
+.day.f2{background:var(--mint)}
+.day.f1{background:var(--lilac-l)}
+.day.f0{background:#fff}
+.day.f0 b{opacity:.55}
+.day.today{box-shadow:inset 0 0 0 3px var(--lilac-d)}
+.day[aria-pressed=true]{background:var(--ink);color:#fff}
+.day[aria-pressed=true] small{color:#fff}
+.day[aria-pressed=true] b{opacity:1}
+.day.past{opacity:.45}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:13.5px;color:var(--ink-soft)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend u{display:inline-block;width:16px;height:16px;border:2px solid var(--ink);border-radius:5px;text-decoration:none}
+.daybox{margin-top:16px;padding:14px 16px;border:var(--stroke);border-radius:20px;background:var(--cream)}
+.daybox h4{font-size:20px;margin-bottom:4px}
+.daybox p{font-size:15.5px}
+.daybox b{font-weight:600}
+
+/* year, quarters, months */
+.yr{border:var(--stroke);border-radius:22px;padding:16px 18px;background:var(--lilac-l);margin-top:14px}
+.yr.now{background:var(--mint)}
+.yr-head{display:flex;align-items:center;gap:14px}
+.big{flex:none;width:68px;height:68px;border-radius:50%;background:#fff;border:var(--stroke);display:grid;place-items:center;font-family:var(--display);font-size:36px;line-height:1;box-shadow:3px 3px 0 var(--ink)}
+.yr-head small{display:block;color:var(--ink-soft);font-size:14px}
+.yr > p{margin-top:10px}
+.qs{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.qs li{background:#fff;border:2px solid var(--ink);border-radius:14px;padding:8px 12px;font-size:14.5px;line-height:1.4}
+.qs li.cur{box-shadow:inset 0 0 0 3px var(--lilac-d)}
+.qs b{font-family:var(--display);font-weight:400;font-size:20px}
+.qs small{display:block;color:var(--ink-soft);font-size:13px}
+.mlist{display:grid;gap:10px;margin-top:6px}
+.mrow{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center;border:2px solid var(--ink);border-radius:18px;padding:10px 14px;background:#fff}
+.mrow.now{background:var(--mint-l)}
+.mrow .n{grid-row:span 2;width:52px;height:52px;border-radius:50%;border:2px solid var(--ink);background:var(--lilac-l);display:grid;place-items:center;font-family:var(--display);font-size:26px;line-height:1}
+.mrow h4{font-size:19px}
+.mrow h4 small{font-family:var(--body);font-size:13.5px;color:var(--ink-soft);font-weight:400}
+.mrow p{font-size:14.5px;line-height:1.5}
+.mrow b{font-weight:600}
+
+/* profile */
+.tri{display:grid;gap:12px;margin-top:6px}
+.tcard{border:2px solid var(--ink);border-radius:20px;padding:14px 16px;background:#fff}
+.tcard header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.tcard .n{flex:none;min-width:56px;height:56px;padding:0 10px;border-radius:999px;border:2px solid var(--ink);background:var(--mint);display:grid;place-items:center;font-family:var(--display);font-size:24px;line-height:1}
+.tcard h3 small{display:block;font-family:var(--body);font-size:13.5px;color:var(--ink-soft);font-weight:400}
+.tcard p{font-size:15.5px}
+.tcard p + p{margin-top:6px}
+.tcard b{font-weight:600}
+
+.keep{display:grid;gap:10px}
+.keep input{width:100%;min-height:48px;padding:0 12px;border:2px solid var(--ink);border-radius:14px;background:#fff;font:400 14px/1 monospace;color:var(--ink);direction:ltr}
+.keep .actions{margin-top:0}
+
+footer{margin-top:40px;text-align:center;font-size:13.5px;color:var(--ink-soft)}
+footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 8px;margin-bottom:10px}
+footer nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:var(--ink)}
+footer p{max-width:36em;margin:0 auto 8px;line-height:1.55}
+
+.sticky{position:fixed;inset:auto 0 0 0;z-index:30;background:#fff;border-top:var(--stroke);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.sticky span{font-weight:500}
+
+@media (max-width:480px){
+  .hero h1{font-size:33px}
+  .card{padding:20px 14px;border-radius:24px}
+  .cal{gap:4px}
+  .day{border-radius:11px;min-height:48px}
+  .day b{font-size:19px}
+  .qs{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media print{
+  body{background:#fff}
+  .no-print,.sticky,.banner,.top a,footer nav{display:none!important}
+  .card{box-shadow:none;break-inside:avoid;margin-top:14px}
+  .page{width:100%;padding:0}
+}
+</style>
+</head>
+<body>
+<main class="page" id="main">
+
+  <div class="top">
+    <a href="index.html" class="no-print">→ לעמוד הראשי</a>
+    <img src="assets/logo-icon.svg" alt="Wolf" width="34" height="37">
+  </div>
+
+  <header class="hero">
+    <h1>לוח העיתוי האישי</h1>
+    <p class="hand">מתי לפעול ומתי לחכות</p>
+  </header>
+
+  <div class="banner" id="demoBanner" hidden>
+    <p><b>זו דוגמה, על שם ותאריך שאינם שלך.</b> כדי לחשב לפי השם ותאריך הלידה שלך, פותחים את הכלי המלא.</p>
+    <button class="btn sm" type="button" data-buy></button>
+  </div>
+  <div class="banner" id="previewBanner" hidden>
+    <p><b>מצב תצוגה מקדימה.</b> לא הוגדר מפתח גישה ב-settings.js, ולכן הכלי פתוח לכולם.</p>
+  </div>
+  <div class="banner ok" id="thanksBanner" hidden>
+    <p><b>התשלום התקבל, והכלי פתוח.</b> כדאי לשמור עכשיו את הקישור האישי שבתחתית העמוד, כדי לחזור לכלי מכל מכשיר.</p>
+  </div>
+
+  <!-- ============ פרטים ============ -->
+  <section class="card" aria-labelledby="meH">
+    <h2 id="meH">הפרטים שלך</h2>
+    <p class="lead">השם שקוראים לך ביום־יום, בעברית, ותאריך הלידה המלא.</p>
+    <form class="row" id="meForm" novalidate>
+      <div class="f"><label for="fName">שם פרטי</label><input id="fName" type="text" autocomplete="given-name" maxlength="30" required></div>
+      <div class="f"><label for="fBirth">תאריך לידה</label><input id="fBirth" type="date" autocomplete="bday" required></div>
+      <button class="btn no-print" type="submit" id="meBtn">לחישוב</button>
+      <p class="err" id="meErr" role="alert"></p>
+    </form>
+    <p class="hint" style="margin-top:10px">הפרטים נשמרים רק במכשיר הזה, כדי שלא תצטרכי להקליד שוב. הם לא נשלחים לשום מקום.</p>
+  </section>
+
+  <div id="out" hidden>
+
+    <!-- ============ בדיקת החלטה ============ -->
+    <section class="card mint" aria-labelledby="chkH">
+      <h2 id="chkH">בדיקת החלטה</h2>
+      <p class="lead" style="color:var(--ink)">בוחרים סוג החלטה, ואז בודקים תאריך מסוים או מחפשים את הימים המתאימים ביותר.</p>
+      <div class="chips" id="decChips" role="group" aria-label="סוג ההחלטה"></div>
+      <p class="dec-hint" id="decHint" aria-live="polite"></p>
+      <div class="dates" id="dates"></div>
+      <button class="link no-print" type="button" id="addDate">+ תאריך נוסף להשוואה</button>
+      <p class="err" id="chkErr" role="alert"></p>
+      <div class="actions no-print">
+        <button class="btn" type="button" id="runCheck">לבדיקת התאריך</button>
+        <button class="btn white" type="button" id="findBest">הימים המתאימים ביותר ב-90 יום</button>
+      </div>
+      <div id="checkOut" aria-live="polite"></div>
+      <div id="bestOut" aria-live="polite"></div>
+    </section>
+
+    <!-- ============ לוח הימים ============ -->
+    <section class="card" aria-labelledby="calH">
+      <h2 id="calH">לוח הימים האישיים</h2>
+      <p class="lead">בכל יום מופיע היום האישי שלך. אם בחרת סוג החלטה למעלה, הלוח נצבע לפיה. לחיצה על יום מציגה מה מתאים בו.</p>
+      <div class="cal-head">
+        <button class="nav no-print" type="button" id="calPrev" aria-label="החודש הקודם">›</button>
+        <h3 id="calTitle" aria-live="polite"></h3>
+        <button class="nav no-print" type="button" id="calNext" aria-label="החודש הבא">‹</button>
+      </div>
+      <div class="cal" id="cal"></div>
+      <div class="legend" id="calLegend"></div>
+      <div class="daybox" id="dayBox" hidden aria-live="polite"></div>
+    </section>
+
+    <!-- ============ השנה והרבעונים ============ -->
+    <section class="card" aria-labelledby="yrH">
+      <h2 id="yrH">השנה האישית והרבעונים</h2>
+      <p class="lead">השנה האישית מתחלפת ביום ההולדת שלך, וכל שנה מתחלקת לארבעה רבעונים.</p>
+      <div id="years"></div>
+    </section>
+
+    <!-- ============ החודשים ============ -->
+    <section class="card" aria-labelledby="moH">
+      <h2 id="moH">החודשים שלך</h2>
+      <p class="lead">מה מתאים בכל חודש אישי, ועם מה עדיף לחכות.</p>
+      <div class="mlist" id="months"></div>
+    </section>
+
+    <!-- ============ איך את מחליטה ============ -->
+    <section class="card lilac" aria-labelledby="prH">
+      <h2 id="prH">איך את מקבלת החלטות</h2>
+      <p class="lead" style="color:var(--ink)">שלושת המספרים שמרכיבים את המשולש שלך.</p>
+      <div class="tri" id="tri"></div>
+    </section>
+
+    <section class="card no-print" aria-labelledby="upH">
+      <h2 id="upH">רוצה שאכתוב לך על ההחלטה הזו?</h2>
+      <p class="lead">הלוח מראה את העיתוי. בייעוץ בכתב אני מתייחסת לשאלה שלך ולהקשר שלה, והוא נשלח למייל, בלי פגישה.</p>
+      <a class="btn wide" href="index.html#services" id="upBtn">לייעוץ האישי בכתב</a>
+    </section>
+
+    <section class="card no-print" id="keepCard" hidden aria-labelledby="kpH">
+      <h2 id="kpH">הקישור האישי שלך</h2>
+      <p class="lead">דרך הקישור הזה חוזרים לכלי מכל מכשיר. כדאי לשמור אותו.</p>
+      <div class="keep">
+        <label class="sr" for="keepUrl">הקישור האישי</label>
+        <input id="keepUrl" readonly>
+        <div class="actions">
+          <button class="btn sm" type="button" id="copyUrl">העתקת הקישור</button>
+          <a class="btn sm white" id="mailUrl" href="#">לשלוח לעצמי במייל</a>
+          <button class="btn sm white" type="button" id="printBtn">הדפסה / שמירה כ-PDF</button>
+        </div>
+        <p class="hint" id="copyMsg" role="status"></p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <nav id="legal" aria-label="מסמכים נוספים"></nav>
+    <p id="dis"></p>
+    <p>הכלי פעיל עד <span id="untilTxt"></span>. החישובים נעשים בדפדפן שלך.</p>
+  </footer>
+</main>
+
+<div class="sticky no-print" id="sticky" hidden>
+  <span id="stickyTxt"></span>
+  <button class="btn sm" type="button" data-buy></button>
+</div>
+
+<script src="settings.js"></script>
+<script src="engine.js"></script>
+<script>
+const $  = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const E = Engine, C = E.CYCLE;
+const MONTHS = ["ינואר","פברואר","מרץ","אפריל","מאי","יוני","יולי","אוגוסט","ספטמבר","אוקטובר","נובמבר","דצמבר"];
+const WD = ["ראשון","שני","שלישי","רביעי","חמישי","שישי","שבת"];
+const WD_SHORT = ["א׳","ב׳","ג׳","ד׳","ה׳","ו׳","ש׳"];
+const LAYER = {day:"היום האישי",month:"החודש האישי",year:"השנה האישית"};
+const SAMPLE = {name:"דנה", birth:"1990-03-15"};
+const today = E.fromDate(new Date());
+const until = E.parseDate(TOOL.until);
+const short = o => `${o.d}.${o.m}.${o.y}`;
+const long  = o => `יום ${WD[E.toDate(o).getDay()]}, ${o.d} ב${MONTHS[o.m-1]} ${o.y}`;
+const inRange = o => E.toDate(o) >= E.toDate(today) && E.toDate(o) <= E.toDate(until);
+const ls = { get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}} };
+
+let access=false, key="", person=null, dec="", calMonth={y:today.y,m:today.m}, selDay=null;
+
+/* ---------- פיקסל של Meta: נטען רק אם מוגדר ב-settings.js. השם והתאריך לא נשלחים אליו ---------- */
+if (CONFIG.metaPixelId){
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
+  fbq("init",CONFIG.metaPixelId);
+  fbq("track","PageView");
+}
+const track = (ev,data) => { if(window.fbq) fbq("track",ev,data); };
+
+/* ---------- גישה: המפתח מגיע בכתובת החזרה מ-GROW (?k=...). באתר שמורה רק טביעת האצבע שלו ---------- */
+async function sha256(s){
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
+  return [...new Uint8Array(buf)].map(x=>x.toString(16).padStart(2,"0")).join("");
+}
+async function checkAccess(){
+  if(!CONFIG.toolKeyHash) return true;
+  const q = new URLSearchParams(location.search);
+  for(const k of [q.get("k"), ls.get("luach-key")]){
+    if(!k) continue;
+    try{ if(await sha256(k) === CONFIG.toolKeyHash){ key=k; ls.set("luach-key",k); return true; } }catch(e){}
+  }
+  return false;
+}
+function buy(){
+  track("InitiateCheckout",{content_name:TOOL.name,value:TOOL.price,currency:"ILS"});
+  location.href = TOOL.payUrl ? TOOL.payUrl : `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(`היי קרן, אשמח לקבל גישה ל${TOOL.name}.`)}`;
+}
+
+/* ---------- בדיקת החלטה ---------- */
+function dateField(i,val){
+  return `<div class="f"><label for="dt${i}">${i===0?"תאריך לבדיקה":"תאריך נוסף"}</label><input id="dt${i}" class="dt" type="date" min="${E.iso(today)}" max="${E.iso(until)}" value="${val||""}"></div>`;
+}
+function verdictCard(r,tag){
+  const V = E.VERDICTS[r.verdict], d = E.DECISIONS.find(x=>x.id===dec);
+  return `<article class="verdict v${r.verdict}">
+    ${tag?`<span class="tag">${esc(tag)}</span>`:""}
+    <h3>${esc(long(r.date))}: ${esc(V.label)}</h3>
+    <p>${esc(d.name)}. ${esc(r.text)}</p>
+    <ul>${r.parts.map(p=>`<li><span>${LAYER[p.layer]} ${p.num}, ${esc(C[p.num].word)}</span><em>${esc(E.FIT_LABELS[p.fit])}</em></li>`).join("")}</ul>
+    <p class="dw"><b>ביום הזה מתאים:</b> ${esc(C[r.cycles.day].good)}.</p>
+    <p class="dw"><b>עדיף לדחות:</b> ${esc(C[r.cycles.day].wait)}.</p>
+  </article>`;
+}
+function meNote(){
+  const p = E.profile(person.birth, person.name), id = p.name || p.day, t = E.decideText(id);
+  const src = p.name ? `לפי השם שלך (${id.display}, ${t.title})` : `לפי יום הלידה שלך (${id.display}, ${t.title})`;
+  return `<p class="me"><b>${esc(src)}:</b> את ${esc(t.how)} <b>כדאי לשים לב:</b> ${esc(t.watch)}</p>`;
+}
+function needDec(){
+  if(dec) { $("#chkErr").textContent=""; return true; }
+  $("#chkErr").textContent="קודם בוחרים סוג החלטה.";
+  $("#decChips .chip").focus(); return false;
+}
+function runCheck(){
+  if(!needDec()) return;
+  const dates = $$("#dates .dt").map(i=>E.parseDate(i.value)).filter(Boolean);
+  const ok = dates.filter(inRange);
+  if(!ok.length){ $("#chkErr").textContent = dates.length ? `אפשר לבדוק תאריכים מהיום ועד ${short(until)}.` : "צריך לבחור לפחות תאריך אחד."; $("#dt0").focus(); return; }
+  const res = ok.map(o=>E.checkDate(person.birth,dec,o)).sort((a,b)=>b.verdict-a.verdict||b.score-a.score);
+  const tie = res.length>1 && res[0].score===res[1].score && res[0].verdict===res[1].verdict;
+  $("#checkOut").innerHTML = res.map((r,i)=>verdictCard(r, res.length>1&&i===0&&!tie ? "המתאים ביותר מבין התאריכים שבחרת" : "")).join("") + meNote();
+  $("#checkOut").scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+function findBest(){
+  if(!needDec()) return;
+  const span = Math.min(90, Math.round((E.toDate(until)-E.toDate(today))/864e5)+1);
+  let list = E.bestDates(person.birth,dec,today,span,8), full = true;
+  if(!list.length){
+    full = false;
+    list = Array.from({length:span},(_,i)=>E.checkDate(person.birth,dec,E.addDays(today,i))).filter(r=>r.verdict===1)
+      .sort((a,b)=>b.score-a.score||E.toDate(a.date)-E.toDate(b.date)).slice(0,6).sort((a,b)=>E.toDate(a.date)-E.toDate(b.date));
+  }
+  const d = E.DECISIONS.find(x=>x.id===dec);
+  const head = full
+    ? `<h3 style="margin-top:22px">הימים המתאימים ביותר: ${esc(d.name)}</h3><p class="hint">ימים שבהם היום האישי תומך בהחלטה, וגם התקופה שסביבו. עד ${short(E.addDays(today,span-1))}.</p>`
+    : `<h3 style="margin-top:22px">אין כרגע עיתוי מלא: ${esc(d.name)}</h3><p class="hint">ב-${span} הימים הקרובים אין יום שבו גם היום האישי וגם התקופה תומכים בהחלטה הזו. אלה הימים הקרובים ביותר לכך:</p>`;
+  $("#bestOut").innerHTML = head + (list.length
+    ? `<ul class="best">${list.map(r=>`<li class="${full?"":"maybe"}"><b>${esc(long(r.date))}</b><span>יום אישי ${r.cycles.day}, ${esc(C[r.cycles.day].word)}</span></li>`).join("")}</ul>`
+    : `<p style="margin-top:10px">התקופה הזו מתאימה יותר לדברים אחרים. כדאי להסתכל על החודשים והרבעונים שלמטה.</p>`);
+  $("#bestOut").scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+
+/* ---------- לוח הימים ---------- */
+const sameMonth = (a,b) => a.y===b.y && a.m===b.m;
+function renderCal(){
+  const {y,m} = calMonth, n = new Date(y,m,0).getDate(), pad = new Date(y,m-1,1).getDay();
+  $("#calTitle").textContent = `${MONTHS[m-1]} ${y}`;
+  $("#calPrev").disabled = sameMonth(calMonth,today);
+  $("#calNext").disabled = sameMonth(calMonth,until);
+  let h = WD_SHORT.map(w=>`<div class="wd" aria-hidden="true">${w}</div>`).join("") + "<div></div>".repeat(pad);
+  for(let d=1; d<=n; d++){
+    const o = {y,m,d}, c = E.cycles(person.birth,o), past = E.toDate(o) < E.toDate(today);
+    const r = dec ? E.checkDate(person.birth,dec,o) : null;
+    const isSel = selDay && E.iso(selDay)===E.iso(o);
+    const mark = r ? ["○","◐","●"][r.verdict] : "";
+    const al = `${d} ב${MONTHS[m-1]}, יום אישי ${c.day}, ${C[c.day].word}${r?", "+E.VERDICTS[r.verdict].label:""}`;
+    h += `<button type="button" class="day${r?" f"+r.verdict:""}${E.iso(o)===E.iso(today)?" today":""}${past?" past":""}" data-d="${d}" aria-pressed="${!!isSel}" aria-label="${esc(al)}"><small>${d}</small><b>${c.day}</b>${mark?`<i aria-hidden="true">${mark}</i>`:""}</button>`;
+  }
+  $("#cal").innerHTML = h;
+  $("#calLegend").innerHTML = dec
+    ? `<span><u style="background:var(--mint)"></u>● עיתוי מתאים</span><span><u style="background:var(--lilac-l)"></u>◐ אפשרי</span><span><u style="background:#fff"></u>○ עדיף לחכות</span>`
+    : `<span>המספר הגדול הוא היום האישי שלך. בחירת סוג החלטה למעלה צובעת את הלוח.</span>`;
+  renderDay();
+}
+function renderDay(){
+  const box = $("#dayBox");
+  if(!selDay || !sameMonth(selDay,calMonth)){ box.hidden = true; return; }
+  const c = E.cycles(person.birth,selDay), r = dec ? E.checkDate(person.birth,dec,selDay) : null;
+  const d = dec && E.DECISIONS.find(x=>x.id===dec);
+  box.innerHTML = `<h4>${esc(long(selDay))}</h4>
+    <p><b>יום אישי ${c.day}, ${esc(C[c.day].word)}</b> · חודש אישי ${c.month}, ${esc(C[c.month].word)} · שנה אישית ${c.year}</p>
+    <p><b>מתאים:</b> ${esc(C[c.day].good)}.</p><p><b>עדיף לדחות:</b> ${esc(C[c.day].wait)}.</p>
+    ${r?`<p style="margin-top:6px"><b>${esc(d.name)}: ${esc(E.VERDICTS[r.verdict].label)}.</b> ${esc(r.text)}</p>`:""}`;
+  box.hidden = false;
+}
+
+/* ---------- השנה האישית והרבעונים ---------- */
+function renderYears(){
+  const b = person.birth, out = [];
+  let on = today;
+  for(let guard=0; guard<3; guard++){
+    const c = E.cycles(b,on), qs = E.quarters(b,on);
+    const from = qs[0].from, to = qs[3].to, now = guard===0;
+    out.push(`<article class="yr${now?" now":""}">
+      <div class="yr-head"><span class="big">${c.year}</span><div><h3>שנה אישית ${c.year}, ${esc(C[c.year].word)}</h3><small>${short(from)} עד ${short(to)}${now?" · השנה הנוכחית שלך":""}</small></div></div>
+      <p>${esc(C[c.year].year)}</p>
+      <ul class="qs">${qs.map(q=>`<li class="${q.current&&now?"cur":""}"><b>${q.num}</b> ${esc(C[q.num].word)}<small>רבעון ${q.index} · ${short(q.from)} עד ${short(q.to)}${q.current&&now?" · עכשיו":""}</small>מתאים: ${esc(C[q.num].good)}</li>`).join("")}</ul>
+    </article>`);
+    on = E.addDays(to,1);
+    if(E.toDate(on) > E.toDate(until)) break;
+  }
+  $("#years").innerHTML = out.join("");
+}
+
+/* ---------- החודשים ---------- */
+function renderMonths(){
+  const rows = [];
+  for(let o={y:today.y,m:today.m,d:1}; E.toDate(o) <= E.toDate(until); o=E.addMonths(o,1)){
+    const mm = E.yearMonths(person.birth,o.y)[o.m-1], now = sameMonth(o,today);
+    const one = (n,label) => `<div class="mrow${now?" now":""}"><span class="n">${n}</span><h4>${MONTHS[o.m-1]} ${o.y} · ${esc(C[n].word)} <small>${label}</small></h4><p><b>מתאים:</b> ${esc(C[n].good)}. <b>עדיף לחכות עם:</b> ${esc(C[n].wait)}.</p></div>`;
+    if(mm.shiftDay){ rows.push(one(mm.num,`עד ${mm.shiftDay-1} בחודש`)); rows.push(one(mm.numAfter,`מ-${mm.shiftDay} בחודש, אחרי יום ההולדת`)); }
+    else rows.push(one(mm.num, now?"החודש הנוכחי":""));
+  }
+  $("#months").innerHTML = rows.join("");
+}
+
+/* ---------- איך את מחליטה ---------- */
+function renderProfile(){
+  const p = E.profile(person.birth, person.name);
+  $("#tri").innerHTML = ["destiny","day","name"].filter(k=>p[k]).map(k=>{
+    const id = p[k], t = E.decideText(id), r = E.ROLES[k];
+    return `<article class="tcard"><header><span class="n">${esc(id.display)}</span><h3>${esc(r.label)} · ${esc(t.title)}<small>${esc(r.weight)} מהמשולש · ${esc(r.text)}</small></h3></header>
+      <p><b>איך זה נראה בהחלטות:</b> ${esc(t.how)}</p><p><b>כדאי לשים לב:</b> ${esc(t.watch)}</p>${t.zero?`<p>${esc(t.zero)}</p>`:""}</article>`;
+  }).join("");
+}
+
+function renderAll(){
+  $("#checkOut").innerHTML = ""; $("#bestOut").innerHTML = "";
+  renderCal(); renderYears(); renderMonths(); renderProfile();
+  $("#out").hidden = false;
+}
+
+/* ---------- אירועים ---------- */
+$("#decChips").innerHTML = E.DECISIONS.map(d=>`<button type="button" class="chip" data-id="${d.id}" aria-pressed="false">${esc(d.name)}</button>`).join("");
+$("#decChips").addEventListener("click",e=>{
+  const c = e.target.closest("[data-id]"); if(!c) return;
+  dec = c.dataset.id;
+  $$("#decChips .chip").forEach(x=>x.setAttribute("aria-pressed",x===c));
+  $("#decHint").textContent = "למשל: " + E.DECISIONS.find(d=>d.id===dec).hint + ".";
+  $("#chkErr").textContent = ""; $("#checkOut").innerHTML = ""; $("#bestOut").innerHTML = "";
+  if(person) renderCal();
+});
+$("#dates").innerHTML = dateField(0, E.iso(today));
+$("#addDate").addEventListener("click",()=>{
+  const n = $$("#dates .dt").length;
+  $("#dates").insertAdjacentHTML("beforeend", dateField(n,""));
+  $("#dt"+n).focus();
+  if(n+1 >= 3) $("#addDate").hidden = true;
+});
+$("#runCheck").addEventListener("click",runCheck);
+$("#findBest").addEventListener("click",findBest);
+$("#calPrev").addEventListener("click",()=>{ const o=E.addMonths({...calMonth,d:1},-1); calMonth={y:o.y,m:o.m}; renderCal(); });
+$("#calNext").addEventListener("click",()=>{ const o=E.addMonths({...calMonth,d:1},1); calMonth={y:o.y,m:o.m}; renderCal(); });
+$("#cal").addEventListener("click",e=>{
+  const b = e.target.closest("[data-d]"); if(!b) return;
+  selDay = {y:calMonth.y,m:calMonth.m,d:+b.dataset.d};
+  $$("#cal .day").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  renderDay();
+});
+$$("[data-buy]").forEach(b=>{ b.textContent = `${TEXT.toolCta} · ${TOOL.price} ${CONFIG.currency}`; b.addEventListener("click",buy); });
+
+$("#meForm").addEventListener("submit",e=>{
+  e.preventDefault(); if(!access) return;
+  const name = $("#fName").value.trim(), birth = E.parseDate($("#fBirth").value);
+  let msg = "";
+  if(!birth || E.toDate(birth) > E.toDate(today)) msg = "צריך תאריך לידה מלא ותקין.";
+  else if(!E.nameValue(name).total) msg = "צריך שם פרטי באותיות עבריות.";
+  $("#meErr").textContent = msg;
+  if(msg){ (birth ? $("#fName") : $("#fBirth")).focus(); return; }
+  person = {name, birth};
+  ls.set("luach-person", JSON.stringify({name, birth:E.iso(birth)}));
+  selDay = null; renderAll();
+  $("#out").scrollIntoView({behavior:"smooth",block:"start"});
+});
+
+$("#copyUrl").addEventListener("click",async()=>{
+  try{ await navigator.clipboard.writeText($("#keepUrl").value); $("#copyMsg").textContent = "הקישור הועתק."; }
+  catch(e){ $("#keepUrl").select(); $("#copyMsg").textContent = "לא הצלחתי להעתיק. הקישור מסומן, אפשר להעתיק אותו ידנית."; }
+});
+$("#printBtn").addEventListener("click",()=>window.print());
+
+/* ---------- הפעלה ---------- */
+$("#legal").innerHTML = Object.values(LEGAL).map(l=>`<a href="${esc(l.href)}">${esc(l.label)}</a>`).join("");
+$("#dis").textContent = TEXT.disclaimer;
+$("#untilTxt").textContent = short(until);
+$("#fBirth").max = E.iso(today);
+
+(async()=>{
+  access = await checkAccess();
+  const q = new URLSearchParams(location.search);
+  if(access){
+    if(!CONFIG.toolKeyHash) $("#previewBanner").hidden = false;
+    if(key){
+      const url = location.origin + location.pathname + "?k=" + encodeURIComponent(key);
+      $("#keepUrl").value = url;
+      $("#mailUrl").href = "mailto:?subject=" + encodeURIComponent("הקישור שלי ללוח העיתוי האישי") + "&body=" + encodeURIComponent(url);
+      $("#keepCard").hidden = false;
+    }
+    if(q.get("status")==="success"){
+      $("#thanksBanner").hidden = false;
+      if(!ls.get("luach-purchased")){ track("Purchase",{content_name:TOOL.name,value:TOOL.price,currency:"ILS"}); ls.set("luach-purchased","1"); }
+    }
+    let saved = null; try{ saved = JSON.parse(ls.get("luach-person")); }catch(e){}
+    const birth = saved && E.parseDate(saved.birth);
+    if(birth && E.nameValue(saved.name).total){
+      $("#fName").value = saved.name; $("#fBirth").value = saved.birth;
+      person = {name:saved.name, birth}; renderAll();
+    }
+  } else {
+    $("#demoBanner").hidden = false; $("#sticky").hidden = false;
+    $("#stickyTxt").textContent = "זו דוגמה. רוצה את הלוח שלך?";
+    $("#fName").value = SAMPLE.name; $("#fBirth").value = SAMPLE.birth;
+    $("#fName").disabled = $("#fBirth").disabled = true; $("#meBtn").hidden = true;
+    person = {name:SAMPLE.name, birth:E.parseDate(SAMPLE.birth)}; renderAll();
+  }
+})();
+</script>
+</body>
+</html>
