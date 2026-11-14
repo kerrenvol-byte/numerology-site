@@ -112,7 +112,7 @@ const TOOL = {
   sub: "כלי אישי לקבלת החלטות, עד סוף 2027",
   price: 89,
   until: "2027-12-31",               // עד מתי הכלי מציג תאריכים
-  payUrl: "",
+  payUrl: "https://pay.grow.link/MTU5MjE~bc41666eba88cca07e3ff0650b83956e-NDI5MjQxMg",
   page: "luach.html",
   desc: "כל מה שהמחשבון החינמי מראה, ועוד שלושה דברים שהופכים מספר להחלטה.",
   includes: [
