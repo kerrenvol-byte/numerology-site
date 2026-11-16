@@ -6,38 +6,14 @@
 <title>מדיניות פרטיות | קרן וולף</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#2a1f4f;--ink-soft:#5d5183;--lilac:#cdbcf7;--lilac-l:#eae1fd;--mint:#cfe5d5;--mint-l:#ecf6ef;--sage:#6f8f79;--bg-top:#e9defc;--bg-mid:#f0f4fd}
-*{box-sizing:border-box}
-body{margin:0;font-family:"Rubik",system-ui,Arial,sans-serif;font-size:17px;line-height:1.8;color:var(--ink);background:linear-gradient(180deg,var(--bg-top) 0,var(--bg-mid) 320px,#fff 900px) #fff;min-height:100vh}
-a{color:var(--ink)}
-.wrap{width:min(760px,100% - 32px);margin:0 auto;padding:28px 0 72px}
-.back{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border:2.5px solid var(--ink);border-radius:999px;background:#fff;box-shadow:3px 3px 0 var(--ink);text-decoration:none;font-weight:500;font-size:15px}
-.back:hover{background:var(--mint-l)}
-.brand{display:flex;align-items:center;gap:14px;margin:26px 0 8px}
-.brand img{flex:none;width:56px;height:56px;padding:11px;background:var(--sage);border:2.5px solid var(--ink);border-radius:50%;box-shadow:3px 3px 0 var(--ink)}
-h1{font-family:"Suez One","Rubik",serif;font-weight:400;font-size:clamp(30px,6vw,44px);line-height:1.15;margin:0}
-.meta{color:var(--ink-soft);font-size:15px;margin:6px 0 22px}
-.draft{background:#fff3c4;border:2.5px solid var(--ink);border-radius:18px;padding:12px 18px;margin:0 0 24px;font-size:15px}
-.card{background:#fff;border:2.5px solid var(--ink);border-radius:26px;box-shadow:5px 5px 0 var(--ink);padding:clamp(20px,4vw,38px)}
-h2{font-family:"Suez One","Rubik",serif;font-weight:400;font-size:24px;line-height:1.25;margin:32px 0 6px}
-main h2:first-child{margin-top:0}
-p{margin:0 0 12px}
-ul{margin:0 0 14px;padding-inline-start:22px}
-li{margin-bottom:6px}
-.ph{background:#fff3c4;border-radius:6px;padding:0 4px}
-.note{background:var(--mint-l);border:2px solid var(--ink);border-radius:16px;padding:12px 16px;margin:8px 0 14px;font-size:15.5px}
-.other{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:26px;font-size:15px}
-[hidden]{display:none!important}
-:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:8px}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 </head>
-<body>
+<body class="doc">
 <div class="wrap">
 <header>
   <a class='back' href='/'>← חזרה לאתר</a>
-  <div class="brand"><img src="assets/logo-icon.svg" alt=""><h1>מדיניות פרטיות</h1></div>
+  <div class="brand"><img src="assets/logo-mark-orange.svg" alt=""><h1>מדיניות פרטיות</h1></div>
   <p class="meta">עודכן לאחרונה: <span data-b="updated"></span></p>
   <div class="draft" id="draft" hidden><b>טיוטה לבדיקה.</b> המסמך הוכן כטיוטה ואינו ייעוץ משפטי. יש להעביר אותו לעורך דין לפני פרסום, ולמלא את הפרטים המסומנים בצהוב. להסרת הבאנר: BUSINESS.draft = false בקובץ settings.js.</div>
 </header>
@@ -50,7 +26,7 @@ li{margin-bottom:6px}
 <ul>
 <li><b>בעמוד התשלום של ספק הסליקה (GROW):</b> שם מלא, טלפון ומייל, לצורך התשלום והחשבונית. <b>בטופס באתר, אחרי התשלום:</b> שם מלא, מייל, תאריך לידה, שם בלידה, שעת לידה (אם ידועה), ובנוסף, לפי השירות, השאלה, החודש או השנה, וההקשר שכתבת.</li>
 <li><b>פרטי כרטיס האשראי</b> מוקלדים בעמוד של ספק הסליקה. העסק אינו רואה אותם ואינו שומר אותם.</li>
-<li><b>במחשבון שבדף הבית:</b> החישוב מתבצע בדפדפן שלך. תאריך הלידה שמוזן שם אינו נשלח מהאתר ואינו נשמר בו.</li>
+<li><b>במחשבון שבדף הבית:</b> החישוב מתבצע בדפדפן שלך. השם ותאריך הלידה שמוזנים שם אינם נשלחים מהאתר. אם הוזן שם, הם נשמרים במכשיר שלך בלבד (באחסון המקומי של הדפדפן), כדי שלוח העיתוי ייפתח עם אותם פרטים, ואפשר למחוק אותם בכל עת במחיקת נתוני הגלישה.</li>
 <li><b>בלוח העיתוי האישי:</b> החישובים מתבצעים בדפדפן שלך. השם ותאריך הלידה שמוזנים שם אינם נשלחים מהאתר. הם נשמרים במכשיר שלך בלבד (באחסון המקומי של הדפדפן), כדי שלא תצטרכי להקליד אותם שוב, ואפשר למחוק אותם בכל עת במחיקת נתוני הגלישה.</li>
 <li><b>מידע טכני בסיסי</b> (כתובת IP, סוג דפדפן) נרשם אצל חברת האחסון לצורכי תפעול ואבטחה.</li>
 </ul>
