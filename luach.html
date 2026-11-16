@@ -170,11 +170,12 @@ async function sha256(s){
   return [...new Uint8Array(buf)].map(x=>x.toString(16).padStart(2,"0")).join("");
 }
 async function checkAccess(){
-  if(!CONFIG.toolKeyHash) return true;
+  const hashes = [].concat(CONFIG.toolKeyHash||[]).filter(Boolean); // מפתח אחד או כמה (למשל מפתח מתנה נפרד)
+  if(!hashes.length) return true;
   const q = new URLSearchParams(location.search);
   for(const k of [q.get("k"), ls.get("luach-key")]){
     if(!k) continue;
-    try{ if(await sha256(k) === CONFIG.toolKeyHash){ key=k; ls.set("luach-key",k); return true; } }catch(e){}
+    try{ if(hashes.includes(await sha256(k))){ key=k; ls.set("luach-key",k); return true; } }catch(e){}
   }
   return false;
 }
@@ -382,7 +383,7 @@ $("#fBirth").max = E.iso(today);
   access = await checkAccess();
   const q = new URLSearchParams(location.search);
   if(access){
-    if(!CONFIG.toolKeyHash) $("#previewBanner").hidden = false;
+    if(![].concat(CONFIG.toolKeyHash||[]).filter(Boolean).length) $("#previewBanner").hidden = false;
     if(key){
       const url = location.origin + location.pathname + "?k=" + encodeURIComponent(key);
       $("#keepUrl").value = url;
